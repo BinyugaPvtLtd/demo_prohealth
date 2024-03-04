@@ -16,14 +16,14 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(children: [
-      Expanded(
-          child: Container(
+      Container(
+        height: 100,
         color: Colors.purpleAccent,
-      )),
-      Expanded(
-          child: Container(
+      ),
+      Container(
+        height: 100,
         color: Colors.pinkAccent,
-      )),
+      ),
       // Container(
       //   height: 40,
       //   width: 700,
