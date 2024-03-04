@@ -1,89 +1,54 @@
 import 'package:demo_prohealth/controller.dart';
-import 'package:demo_prohealth/web_screen/switch_page_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 
-class DesktopWebScreen extends StatelessWidget {
+class DesktopWebScreen extends StatefulWidget {
+  @override
+  State<DesktopWebScreen> createState() => _DesktopWebScreenState();
+}
+
+class _DesktopWebScreenState extends State<DesktopWebScreen> {
   final MyController myController = Get.find();
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Desktop Web Screen'),
+        body: Column(children: [
+      Container(
+        height: 100,
+        color: Colors.purpleAccent,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Desktop Web Screen Content',
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Desktop Web Button'),
-            ),
-            Spacer(), // Add a spacer to push the bottom navigation bar to the middle
-            SizedBox(
-                height: 60,
-                child: BottomNavBar.getBottomNavigationBar()), // Call the method here
-            SizedBox(height: 20),
-            // SizedBox(height: 20),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //     children: [
-            //       Container(
-            //       color: Colors.blueGrey,
-            //       height: 180,
-            //         width: MediaQuery.of(context).size.width/3,
-            //     ),
-            //       Container(
-            //         color: Colors.blueGrey,
-            //         height: 180,
-            //         width: MediaQuery.of(context).size.width/3,
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: SizedBox(
-                height: 180,
-                //width: MediaQuery.of(context).size.width/0.8,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width/3,
-                      child: Column(),
-
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.blue[100],
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    Container(
-                      width: MediaQuery.of(context).size.width/3,
-                      child: Column(),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.indigo[100],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
+      Container(
+        height: 100,
+        color: Colors.pinkAccent,
       ),
-    );
+      // Container(
+      //   height: 40,
+      //   width: 700,
+      //   padding: EdgeInsets.all(5),
+      //   decoration: BoxDecoration(
+      //       borderRadius: BorderRadius.circular(30),
+      //       color: Color(0xff50B5E5)),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //       Text('Employment'),
+      //       Text('Education'),
+      //       Text('Referance'),
+      //       Text('Licenses'),
+      //     ],
+      //   ),
+      // )
+      // Container(
+      //   color: Color(0xff50B5E5),
+      //   child: _buildBottomBar(),
+      // )
+    ]));
   }
+
+  // Widget _buildBottomBar() {
+  //   return CustomAnimatedBottomBar();
+  // }
 }
