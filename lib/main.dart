@@ -1,5 +1,5 @@
 import 'package:demo_prohealth/controller.dart';
-import 'package:demo_prohealth/web_screen/home_page.dart';
+import 'package:demo_prohealth/web_screen/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Responsive App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
