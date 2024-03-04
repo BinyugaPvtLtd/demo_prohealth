@@ -15,6 +15,9 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   leading: Image.asset('images/logo.png',height: 64,width: 226,),
+      // ),
         body: Column(children: [
       Container(
         height: 100,
