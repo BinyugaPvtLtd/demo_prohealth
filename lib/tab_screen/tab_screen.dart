@@ -1,7 +1,7 @@
 import 'package:demo_prohealth/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instancnsive.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 
 class TabletScreen extends StatelessWidget {
   final MyController myController = Get.find();
