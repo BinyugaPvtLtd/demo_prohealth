@@ -1,36 +1,56 @@
+import 'package:demo_prohealth/controller.dart';
+import 'package:demo_prohealth/tab_screen/tab_screen.dart';
+import 'package:demo_prohealth/web_screen/web_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final MyController myController = Get.put(MyController());
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Responsive App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(
+        controller: myController,
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class MyHomePage extends StatelessWidget {
+  final MyController controller;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  MyHomePage({required this.controller});
 
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Responsive App'),
+      ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          double screenWidth = constraints.maxWidth;
+
+          // Update the screen type in the controller
+          controller.checkScreenType(screenWidth);
+
+          // Use the isTabletScreen flag to determine the screen type
+          if (controller.isTabletScreen.value) {
+            return TabletScreen();
+          } else {
+            return DesktopWebScreen();
+          }
+        },
+      ),
+    );
   }
 }
