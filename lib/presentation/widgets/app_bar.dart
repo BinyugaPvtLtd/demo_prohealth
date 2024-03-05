@@ -28,7 +28,7 @@ class MyAppBar extends StatelessWidget {
                     topLeft: Radius.circular(15)),
                 gradient: LinearGradient(
                   colors: [
-                    Color(0xff008abd).withOpacity(0.7),
+                    Color(0xff008abd).withOpacity(0.9),
                     Color(0xff008abd).withOpacity(0.8)
                   ],
                   begin: Alignment.topCenter,
