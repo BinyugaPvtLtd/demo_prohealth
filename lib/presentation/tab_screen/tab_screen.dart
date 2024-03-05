@@ -1,4 +1,4 @@
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';

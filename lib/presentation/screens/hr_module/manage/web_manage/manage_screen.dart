@@ -1,6 +1,6 @@
-import 'package:demo_prohealth/app/app_bar.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/employement_widget.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/employement_widget.dart';
+import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -87,7 +87,7 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
 
       ///bottombar 2
       Padding(
-        padding: const EdgeInsets.all(7.0),
+        padding: const EdgeInsets.all(5.0),
         child: Container(
           height: 30,
           width: 400,
