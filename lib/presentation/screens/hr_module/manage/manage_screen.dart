@@ -143,324 +143,336 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
               borderRadius: BorderRadius.circular(15)),
         ),
       ),
-      Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: SizedBox(
-            height: 200,
-            //width: MediaQuery.of(context).size.width/0.8,
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Expanded(
-                child: Container(
-                  // width: MediaQuery.of(context).size.width ,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        // color: Colors.black.withOpacity(0.2),
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 5,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white, // Background color of the card
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(15)), // Rounded corners
-                  ),
-                  // width: MediaQuery.of(context).size.width ,
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 40.0, vertical: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              'Employment #1',
-                              style: TextStyle(
-                                fontFamily: 'FiraSans',
-                                fontSize: 13,
-                                color: Color(0xFF333333),
-                                fontWeight: FontWeight.bold,
-                              ),
+          Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width / 22),
+              child: SizedBox(
+                height: 200,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: Offset(0, 3),
+
+                              /// changes position of shadow
                             ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            CustomColumn(
-                                text1: 'Final Position Title',
-                                text2: 'Start Date',
-                                text3: 'End Date',
-                                text4: 'Employer',
-                                text5: 'Emergency Contact'),
                           ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
                         ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 48,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 35,
-                            ),
-                            CustomColumnSub(
-                                text1: 'Personal',
-                                text2: 'Jerry Christ',
-                                text3: '4541564214',
-                                text4: 'Hamburg',
-                                text5: 'Germany'),
-                          ],
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 40,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 35,
-                            ),
-                            CustomColumn(
-                                text1: 'Reason of Leaving',
-                                text2: 'Last Supervisor’s Name',
-                                text3: 'SuoerVisor\'s Phone No.',
-                                text4: 'City',
-                                text5: 'Country'),
-                          ],
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 48,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 35,
-                            ),
-                            CustomColumnSub(
-                                text1: 'Developer',
-                                text2: '01-03-24',
-                                text3: '22-03-24',
-                                text4: 'John Smith',
-                                text5: '9845632156'),
-                          ],
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 48,
-                        ),
-                        Padding(
-                            padding: const EdgeInsets.only(top: 145.0),
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: Row(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: MediaQuery.of(context).size.width / 50,
+                              vertical: 10),
+                          child: Row(
+                            children: [
+                              Column(
                                 children: [
-                                  Icon(
-                                    Icons.edit,
-                                    color: Color(0xFF1696C8),
-                                  ),
-                                  SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 150,
-                                  ), // Adjust the space between the icon and text as needed
                                   Text(
-                                    'Edit',
+                                    'Employment #1',
                                     style: TextStyle(
                                       fontFamily: 'FiraSans',
-                                      fontWeight: FontWeight.w700,
-                                      fontSize:
-                                          MediaQuery.of(context).size.width /
-                                              120,
-                                      color: Color(0xFF1696C8),
+                                      fontSize: 13,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  CustomColumn(
+                                      text1: 'Final Position Title',
+                                      text2: 'Start Date',
+                                      text3: 'End Date',
+                                      text4: 'Employer',
+                                      text5: 'Emergency Contact'),
                                 ],
                               ),
-                            ))
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: Container(
-                  // width: MediaQuery.of(context).size.width ,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        // color: Colors.black.withOpacity(0.2),
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 5,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white, // Background color of the card
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(15)), // Rounded corners
-                  ),
-                  // width: MediaQuery.of(context).size.width ,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width / 45,
-                        vertical: 10),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              'Employment #2',
-                              style: TextStyle(
-                                fontFamily: 'FiraSans',
-                                fontSize: 13,
-                                color: Color(0xFF333333),
-                                fontWeight: FontWeight.bold,
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 35,
                               ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 35,
+                                  ),
+                                  CustomColumnSub(
+                                      text1: 'Personal',
+                                      text2: 'Jerry Christ',
+                                      text3: '4541564214',
+                                      text4: 'Hamburg',
+                                      text5: 'Germany'),
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 18,
+                              ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 35,
+                                  ),
+                                  CustomColumn(
+                                      text1: 'Reason of Leaving',
+                                      text2: 'Last Supervisor’s Name',
+                                      text3: 'SuoerVisor\'s Phone No.',
+                                      text4: 'City',
+                                      text5: 'Country'),
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 35,
+                              ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 35,
+                                  ),
+                                  CustomColumnSub(
+                                      text1: 'Developer',
+                                      text2: '01-03-24',
+                                      text3: '22-03-24',
+                                      text4: 'John Smith',
+                                      text5: '9845632156'),
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 29,
+                              ),
+                              Padding(
+                                  padding: const EdgeInsets.only(top: 145.0),
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.edit,
+                                          color: Color(0xFF1696C8),
+                                        ),
+                                        SizedBox(
+                                          width:
+                                          MediaQuery.of(context).size.width / 150,
+                                        ), // Adjust the space between the icon and text as needed
+                                        Text(
+                                          'Edit',
+                                          style: TextStyle(
+                                            fontFamily: 'FiraSans',
+                                            fontWeight: FontWeight.w700,
+                                            fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                120,
+                                            color: Color(0xFF1696C8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ))
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width/80,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: Offset(0, 3),
+                              /// changes position of shadow
                             ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            CustomColumn(
-                                text1: 'Final Position Title',
-                                text2: 'Start Date',
-                                text3: 'End Date',
-                                text4: 'Employer',
-                                text5: 'Emergency Contact'),
                           ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
                         ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 30,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: MediaQuery.of(context).size.width / 50,
+                              vertical: 10),
+                          child: Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    'Employment #2',
+                                    style: TextStyle(
+                                      fontFamily: 'FiraSans',
+                                      fontSize: 13,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  CustomColumn(
+                                      text1: 'Final Position Title',
+                                      text2: 'Start Date',
+                                      text3: 'End Date',
+                                      text4: 'Employer',
+                                      text5: 'Emergency Contact'),
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 35,
+                              ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 35,
+                                  ),
+                                  CustomColumnSub(
+                                      text1: 'Personal',
+                                      text2: 'Jerry Christ',
+                                      text3: '4541564214',
+                                      text4: 'Hamburg',
+                                      text5: 'Germany'),
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 18,
+                              ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 35,
+                                  ),
+                                  CustomColumn(
+                                      text1: 'Reason of Leaving',
+                                      text2: 'Last Supervisor’s Name',
+                                      text3: 'SuoerVisor\'s Phone No.',
+                                      text4: 'City',
+                                      text5: 'Country'),
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 35,
+                              ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 35,
+                                  ),
+                                  CustomColumnSub(
+                                      text1: 'Developer',
+                                      text2: '01-03-24',
+                                      text3: '22-03-24',
+                                      text4: 'John Smith',
+                                      text5: '9845632156'),
+                                ],
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 29,
+                              ),
+                              Padding(
+                                  padding: const EdgeInsets.only(top: 145.0),
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.edit,
+                                          color: Color(0xFF1696C8),
+                                        ),
+                                        SizedBox(
+                                          width:
+                                          MediaQuery.of(context).size.width / 150,
+                                        ), // Adjust the space between the icon and text as needed
+                                        Text(
+                                          'Edit',
+                                          style: TextStyle(
+                                            fontFamily: 'FiraSans',
+                                            fontWeight: FontWeight.w700,
+                                            fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                120,
+                                            color: Color(0xFF1696C8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ))
+                            ],
+                          ),
                         ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 35,
-                            ),
-                            CustomColumnSub(
-                                text1: 'Personal',
-                                text2: 'Jerry Christ',
-                                text3: '4541564214',
-                                text4: 'Hamburg',
-                                text5: 'Germany'),
-                          ],
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 18,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 35,
-                            ),
-                            CustomColumn(
-                                text1: 'Reason of Leaving',
-                                text2: 'Last Supervisor’s Name',
-                                text3: 'SuoerVisor\'s Phone No.',
-                                text4: 'City',
-                                text5: 'Country'),
-                          ],
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 30,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 35,
-                            ),
-                            CustomColumnSub(
-                                text1: 'Developer',
-                                text2: '01-03-24',
-                                text3: '22-03-24',
-                                text4: 'John Smith',
-                                text5: '9845632156'),
-                          ],
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 50,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 150.0),
-                          child: EditableButton(
-                              icon: Icons.edit, text: 'edit', onPressed: () {}),
-                        ),
-                      ],
+                      ),
+                    ]),
+              )),
+      SizedBox(
+        height: 20,
+      ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 120),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '#2031ABC01BA',
+                  style: TextStyle(
+                      fontFamily: 'FiraSans',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Washington DC',
+                      style: TextStyle(
+                          fontFamily: 'FiraSans',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black),
                     ),
-                  ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      '198.168.1.231',
+                      style: TextStyle(
+                          fontFamily: 'FiraSans',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black),
+                    ),
+                  ],
                 ),
-              ),
-            ]),
-          )),
-      SizedBox(
-        height: 20,
-      ),
-      SizedBox(
-        height: 20,
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              '#2031ABC01BA',
-              style: TextStyle(
-                  fontFamily: 'FiraSans',
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black),
-            ),
-            Row(
-              children: [
-                Text(
-                  'Washington DC',
-                  style: TextStyle(
-                      fontFamily: 'FiraSans',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  '198.168.1.231',
-                  style: TextStyle(
-                      fontFamily: 'FiraSans',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black),
+                Column(
+                  children: [
+                    Image.asset(
+                      'images/powered_logo.png',
+                      height: 23,
+                      width: 30,
+                    ),
+                    Text(
+                      'Powered by',
+                      style: TextStyle(
+                          fontFamily: 'FiraSans',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black),
+                    ),
+                  ],
                 ),
               ],
             ),
-            Column(
-              children: [
-                Image.asset(
-                  'images/powered_logo.png',
-                  height: 23,
-                  width: 30,
-                ),
-                Text(
-                  'Powered by',
-                  style: TextStyle(
-                      fontFamily: 'FiraSans',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+          ),
       SizedBox(
-        height: 20,
+        height: 10,
       ),
     ]);
     // ));
   }
-// Widget _buildBottomBar() {
-//   return CustomAnimatedBottomBar();
-// }
 }
 
 class EditableButton extends StatelessWidget {
