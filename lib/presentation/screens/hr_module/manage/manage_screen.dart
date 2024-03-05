@@ -1,5 +1,5 @@
-import 'package:demo_prohealth/app/app_bar.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/employement_widget.dart';
+import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/employement_widget.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -103,11 +103,11 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            employment_widget(),
+            EmploymentWidget(),
             SizedBox(
               width: 20,
             ),
-            employment_widget(),
+            EmploymentWidget(),
           ],
         ),
       ),
@@ -118,3 +118,4 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
     // ));
   }
 }
+
