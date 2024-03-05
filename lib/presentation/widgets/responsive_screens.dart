@@ -1,7 +1,7 @@
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/hr_module/manage/manage_screen.dart';
+import '../screens/hr_module/manage/web_manage/manage_screen.dart';
 import '../tab_screen/tab_screen.dart';
 
 class ResponsivePage extends StatelessWidget {

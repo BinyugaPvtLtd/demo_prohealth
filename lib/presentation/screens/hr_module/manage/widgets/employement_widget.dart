@@ -1,4 +1,4 @@
-import 'package:demo_prohealth/app/column_constant.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/column_constant.dart';
 import 'package:flutter/material.dart';
 
 class employment_widget extends StatelessWidget {
