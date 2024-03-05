@@ -1,3 +1,4 @@
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/bottom_row.dart';
 import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,8 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start, children: [
       ///appbar
       MyAppBar(),
       SizedBox(
@@ -75,9 +77,9 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
 
       ///bottomppbar 1
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.symmetric(vertical: 15.0),
         child: Container(
-          height: 30,
+          height: 40,
           width: double.infinity,
           decoration: BoxDecoration(
               color: Color(0xff50B5E5),
@@ -86,8 +88,7 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
       ),
 
       ///bottombar 2
-      Padding(
-        padding: const EdgeInsets.all(7.0),
+      Center(
         child: Container(
           height: 30,
           width: 400,
@@ -112,9 +113,12 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
         ),
       ),
       SizedBox(
-        width: 10,
+        height: 10,
       ),
-
+      BottomBarRow(),
+      SizedBox(
+        height: 10,
+      )
     ]);
     // ));
   }
