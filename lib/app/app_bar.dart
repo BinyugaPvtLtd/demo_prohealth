@@ -48,7 +48,7 @@ class MyAppBar extends StatelessWidget {
           ),
           // CircleAvatar(
           //   radius: 16.0,
-          //   backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+          //   bazckgroundImage: NetworkImage('https://via.placeholder.com/150'),
           // ),
         ],
       ),

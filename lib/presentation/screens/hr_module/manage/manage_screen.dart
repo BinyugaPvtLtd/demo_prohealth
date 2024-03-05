@@ -4,6 +4,8 @@ import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller.
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../app/icon_button_constant.dart';
+
 class DesktopWebScreen extends StatefulWidget {
   @override
   State<DesktopWebScreen> createState() => _DesktopWebScreenState();
@@ -143,6 +145,7 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
               borderRadius: BorderRadius.circular(15)),
         ),
       ),
+
           Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width / 22),
@@ -247,32 +250,11 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
                               ),
                               Padding(
                                   padding: const EdgeInsets.only(top: 145.0),
-                                  child: IconButton(
-                                    onPressed: () {},
-                                    icon: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.edit,
-                                          color: Color(0xFF1696C8),
-                                        ),
-                                        SizedBox(
-                                          width:
-                                          MediaQuery.of(context).size.width / 150,
-                                        ), // Adjust the space between the icon and text as needed
-                                        Text(
-                                          'Edit',
-                                          style: TextStyle(
-                                            fontFamily: 'FiraSans',
-                                            fontWeight: FontWeight.w700,
-                                            fontSize:
-                                            MediaQuery.of(context).size.width /
-                                                120,
-                                            color: Color(0xFF1696C8),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ))
+                                  child: IconButtonWidget(
+                                    iconData: Icons.edit,
+                                    buttonText: 'Edit',
+                                    onPressed: (){},)
+                              )
                             ],
                           ),
                         ),
@@ -375,32 +357,10 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
                               ),
                               Padding(
                                   padding: const EdgeInsets.only(top: 145.0),
-                                  child: IconButton(
-                                    onPressed: () {},
-                                    icon: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.edit,
-                                          color: Color(0xFF1696C8),
-                                        ),
-                                        SizedBox(
-                                          width:
-                                          MediaQuery.of(context).size.width / 150,
-                                        ), // Adjust the space between the icon and text as needed
-                                        Text(
-                                          'Edit',
-                                          style: TextStyle(
-                                            fontFamily: 'FiraSans',
-                                            fontWeight: FontWeight.w700,
-                                            fontSize:
-                                            MediaQuery.of(context).size.width /
-                                                120,
-                                            color: Color(0xFF1696C8),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ))
+                                  child:IconButtonWidget(
+                                    iconData: Icons.edit,
+                                    buttonText: 'Edit',
+                                    onPressed: (){},))
                             ],
                           ),
                         ),
@@ -475,42 +435,6 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
   }
 }
 
-class EditableButton extends StatelessWidget {
-  final IconData icon;
-  final String text;
-  final VoidCallback onPressed;
-
-  const EditableButton({
-    Key? key,
-    required this.icon,
-    required this.text,
-    required this.onPressed,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton.icon(
-      onPressed: onPressed,
-      icon: Icon(
-        icon,
-        color: Color(0xFF1696C8),
-      ),
-      label: Text(
-        text,
-        style: TextStyle(
-          color: Color(0xFF1696C8),
-          fontSize: MediaQuery.of(context).size.width / 120,
-        ),
-      ),
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-      ),
-    );
-  }
-}
 
 // Container(
 //   height: 100,
