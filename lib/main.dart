@@ -1,5 +1,5 @@
-import 'package:demo_prohealth/controller.dart';
-import 'package:demo_prohealth/web_screen/screens/home_page.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller.dart';
+import 'package:demo_prohealth/presentation/widgets/responsive_screens.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialRoute: "/",
-      home: MyHomePage(
+      home: ResponsivePage(
         controller: myController,
       ),
     );

@@ -1,4 +1,4 @@
-enum ScreenType {
-  Tablet,
-  Web,
-}
+// enum ScreenType {
+//   Tablet,
+//   Web,
+// }
