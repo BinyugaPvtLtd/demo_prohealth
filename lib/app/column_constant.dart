@@ -18,59 +18,85 @@ class CustomColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return
+        // Container(
+        //   decoration: BoxDecoration(
+        //     boxShadow: [
+        //       BoxShadow(
+        //         color: Colors.grey.withOpacity(0.5),
+        //         spreadRadius: 1,
+        //         blurRadius: 5,
+        //         offset: Offset(0, 3),
+        //
+        //         /// changes position of shadow
+        //       ),
+        //     ],
+        //     color: Colors.white,
+        //     borderRadius: BorderRadius.all(Radius.circular(15)),
+        //   ),
+        //   child:
+        Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           text1,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF686464),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text2,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF686464),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text3,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF686464),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text4,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF686464),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text5,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF686464),
             fontWeight: FontWeight.w400,
           ),
         ),
       ],
+      // ),
     );
   }
 }
@@ -100,47 +126,55 @@ class CustomColumnSub extends StatelessWidget {
           text1,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF2A2827),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text2,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF2A2827),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text3,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF2A2827),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text4,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF2A2827),
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           text5,
           style: TextStyle(
             fontFamily: 'FiraSans',
-            fontSize: MediaQuery.of(context).size.width/150,
+            fontSize: MediaQuery.of(context).size.width / 150,
             color: Color(0xFF2A2827),
             fontWeight: FontWeight.w400,
           ),
