@@ -1,9 +1,9 @@
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/bottom_row.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/employment_container_constant.dart';
 import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/controller.dart';
-import '../widgets/employement_widget.dart';
 
 class DesktopWebScreen extends StatefulWidget {
   @override
@@ -99,19 +99,20 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
       ),
 
       ///sliding view of bottom bar
-      Expanded(
-        flex: 1,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            EmploymentWidget(),
-            SizedBox(
-              width: 20,
-            ),
-            EmploymentWidget(),
-          ],
-        ),
-      ),
+      // Expanded(
+      //   flex: 1,
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       EmploymentWidget(),
+      //       SizedBox(
+      //         width: 20,
+      //       ),
+      //       EmploymentWidget(),
+      //     ],
+      //   ),
+      // ),
+      EmploymentContainerConstant(),
       SizedBox(
         height: 10,
       ),
