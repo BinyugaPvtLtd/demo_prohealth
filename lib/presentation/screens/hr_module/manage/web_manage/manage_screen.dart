@@ -1,10 +1,26 @@
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/bottom_row.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/employment_container_constant.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_constant.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_screen/documents_child/acknowledgements_child_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_screen/documents_child/add_vaccination_child_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_screen/documents_child/compensation_child_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_screen/documents_child/other_child_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_constant.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/banking_head_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/health_records_head_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/inventory_head_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/pay_rates_head_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/termination_head_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/time_off_head_tabbar.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/icon_button_constant.dart';
 import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controller/controller.dart';
+import '../widgets/child_tabbar_screen/qualifications_child/education_child_tabbar.dart';
+import '../widgets/child_tabbar_screen/qualifications_child/employment_child_tabbar.dart';
+import '../widgets/child_tabbar_screen/qualifications_child/licenses_child_tabbar.dart';
+import '../widgets/child_tabbar_screen/qualifications_child/references_child_tabbar.dart';
 
 class DesktopWebScreen extends StatefulWidget {
   @override
@@ -13,7 +29,6 @@ class DesktopWebScreen extends StatefulWidget {
 
 class _DesktopWebScreenState extends State<DesktopWebScreen> {
   final MyController myController = Get.find();
-  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +37,9 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         ///appbar
         MyAppBar(),
-        SizedBox(
-          height: 4,
-        ),
+        SizedBox(height: 4,),
 
+        Container(height: 50,),
         /// green blue container
         Padding(
           padding: const EdgeInsets.only(right: 32),
@@ -76,54 +90,87 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
             ],
           ),
         ),
+        SizedBox(height: 25,),
 
-        ///bottomppbar 1
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15.0),
-          child: Container(
-            height: 40,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: Color(0xff50B5E5),
-                borderRadius: BorderRadius.circular(30)),
-          ),
-        ),
+        ///bottomppbar 1,2
+        CenteredTabBar(
+            tabs: [
+              Tab(text: 'Qualifications'),
+              Tab(text: 'Documents'),
+              Tab(text: 'Banking'),
+              Tab(text: 'Health Records'),
+              Tab(text: 'Inventory'),
+              Tab(text: 'Pay Rates'),
+              Tab(text: 'Termination'),
+              Tab(text: 'Time Off'),
+            ],
+          tabViews: [
+            CenteredTabBarChild(
+              tabs: [
+                Tab(text: 'Employment'),
+                Tab(text: 'Education'),
+                Tab(text: 'Reference'),
+                Tab(text: 'Licenses'),
+              ],
+              tabViews: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 45.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton.icon(
+                              onPressed: (){},
+                            icon: Icon(Icons.add,color: Colors.white,),
+                            label: Text('Add',style: TextStyle(
+                              color: Colors.white
+                            ),),
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                              backgroundColor: Color(0xFF50B5E5),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20), // Adjust border radius
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    EmploymentContainerConstant(),
+                  ],
+                ),
+                EducationChildTabbar(),
+                ReferencesChildTabbar(),
+                LicensesChildTabbar(),
+              ],),
+            CenteredTabBarChild(
+               tabs: [
+                 Tab(text: 'Acknowledgements'),
+               Tab(text: 'Compensation'),
+               Tab(text: 'Additional Vaccinations'),
+               Tab(text: 'Others'),] ,
+               tabViews: [
+                 AcknowledgementsChildBar(),
+                 CompensationChildTabbar(),
+                 AdditionalVaccinationsChildBar(),
+                 OtherChildTabbar(),
+               ]),
+            BankingHeadTabbar(),
+            HealthRecordsHeadTabbar(),
+            InventoryHeadTabbar(),
+            PayRatesHeadTabbar(),
+            TerminationHeadTabbar(),
+            TimeOffHeadTabbar(),
+          ],),
 
-        ///bottombar 2
-        Center(
-          child: Container(
-            height: 30,
-            width: 400,
-            decoration: BoxDecoration(
-                color: Color(0xff50B5E5),
-                borderRadius: BorderRadius.circular(30)),
-          ),
-        ),
-
-        ///sliding view of bottom bar
-        // Expanded(
-        //   flex: 1,
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: [
-        //       EmploymentWidget(),
-        //       SizedBox(
-        //         width: 20,
-        //       ),
-        //       EmploymentWidget(),
-        //     ],
-        //   ),
-        // ),
-        EmploymentContainerConstant(),
-        SizedBox(
-          height: 10,
-        ),
+        /// bottom row
+        SizedBox(height: 6,),
         BottomBarRow(),
-        SizedBox(
-          height: 10,
-        )
       ]),
     );
-    // ));
   }
 }
+
+
