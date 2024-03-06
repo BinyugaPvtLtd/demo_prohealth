@@ -17,7 +17,9 @@ class ResponsivePage extends StatelessWidget {
           controller.checkScreenType(screenWidth);
 
           if (controller.isTabletScreen.value) {
-            return TabletScreen();
+            return Container(
+                height: 1000,
+                child: TabletScreen());
           } else {
             return DesktopWebScreen();
           }
