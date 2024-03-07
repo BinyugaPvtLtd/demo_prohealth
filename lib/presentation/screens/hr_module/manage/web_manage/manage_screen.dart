@@ -11,11 +11,10 @@ import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/hea
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/pay_rates_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/termination_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/time_off_head_tabbar.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/icon_button_constant.dart';
 import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
+import 'package:demo_prohealth/presentation/widgets/custom_icon_button_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controller/controller.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/education_child_tabbar.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/employment_child_tabbar.dart';
@@ -28,18 +27,92 @@ class DesktopWebScreen extends StatefulWidget {
 }
 
 class _DesktopWebScreenState extends State<DesktopWebScreen> {
-  final MyController myController = Get.find();
+  late CenteredTabBarChildController childController;
+  late CenteredTabBarChildController childControlleOne;
+  late CenteredTabBarController centeredTabBarController;
+
+  @override
+  void initState() {
+    childController = CenteredTabBarChildController(
+      tabs: [
+        Tab(text: 'Employment'),
+        Tab(text: 'Education'),
+        Tab(text: 'Reference'),
+        Tab(text: 'Licenses'),
+      ],
+      tabViews: [
+        Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  width: 100,
+                  margin: EdgeInsets.only(right: 50),
+                  child: CustomIconButton(
+                      text: 'Add',
+                      icon: Icons.add,
+                      onPressed: (){}),
+                ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            EmploymentContainerConstant(),
+          ],
+        ),
+        EducationChildTabbar(),
+        ReferencesChildTabbar(),
+        LicensesChildTabbar(),
+      ],
+    );
+    childControlleOne = CenteredTabBarChildController(
+         tabs: [
+           Tab(text: 'Acknowledgements'),
+         Tab(text: 'Compensation'),
+         Tab(text: 'Additional Vaccinations'),
+         Tab(text: 'Others'),] ,
+         tabViews: [
+           AcknowledgementsChildBar(),
+           CompensationChildTabbar(),
+           AdditionalVaccinationsChildBar(),
+           OtherChildTabbar(),
+         ]);
+    centeredTabBarController = Get.put(CenteredTabBarController(
+      tabs: [
+        Tab(text: 'Qualifications'),
+        Tab(text: 'Documents'),
+        Tab(text: 'Banking'),
+        Tab(text: 'Health Records'),
+        Tab(text: 'Inventory'),
+        Tab(text: 'Pay Rates'),
+        Tab(text: 'Termination'),
+        Tab(text: 'Time Off'),
+      ],
+      tabViews: [
+        CenteredTabBarChild(childController),
+        CenteredTabBarChild(childControlleOne),
+        BankingHeadTabbar(),
+        HealthRecordsHeadTabbar(),
+        InventoryHeadTabbar(),
+        PayRatesHeadTabbar(),
+        TerminationHeadTabbar(),
+        TimeOffHeadTabbar(),
+      ],
+    ));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
         ///appbar
         MyAppBar(),
         SizedBox(height: 4,),
-
         Container(height: 50,),
+
         /// green blue container
         Padding(
           padding: const EdgeInsets.only(right: 32),
@@ -93,84 +166,12 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
         SizedBox(height: 25,),
 
         ///bottomppbar 1,2
-        CenteredTabBar(
-            tabs: [
-              Tab(text: 'Qualifications'),
-              Tab(text: 'Documents'),
-              Tab(text: 'Banking'),
-              Tab(text: 'Health Records'),
-              Tab(text: 'Inventory'),
-              Tab(text: 'Pay Rates'),
-              Tab(text: 'Termination'),
-              Tab(text: 'Time Off'),
-            ],
-          tabViews: [
-            CenteredTabBarChild(
-              tabs: [
-                Tab(text: 'Employment'),
-                Tab(text: 'Education'),
-                Tab(text: 'Reference'),
-                Tab(text: 'Licenses'),
-              ],
-              tabViews: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 45.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          ElevatedButton.icon(
-                              onPressed: (){},
-                            icon: Icon(Icons.add,color: Colors.white,),
-                            label: Text('Add',style: TextStyle(
-                              color: Colors.white
-                            ),),
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
-                              backgroundColor: Color(0xFF50B5E5),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20), // Adjust border radius
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    EmploymentContainerConstant(),
-                  ],
-                ),
-                EducationChildTabbar(),
-                ReferencesChildTabbar(),
-                LicensesChildTabbar(),
-              ],),
-            CenteredTabBarChild(
-               tabs: [
-                 Tab(text: 'Acknowledgements'),
-               Tab(text: 'Compensation'),
-               Tab(text: 'Additional Vaccinations'),
-               Tab(text: 'Others'),] ,
-               tabViews: [
-                 AcknowledgementsChildBar(),
-                 CompensationChildTabbar(),
-                 AdditionalVaccinationsChildBar(),
-                 OtherChildTabbar(),
-               ]),
-            BankingHeadTabbar(),
-            HealthRecordsHeadTabbar(),
-            InventoryHeadTabbar(),
-            PayRatesHeadTabbar(),
-            TerminationHeadTabbar(),
-            TimeOffHeadTabbar(),
-          ],),
+      CenteredTabBar(),
 
         /// bottom row
-        SizedBox(height: 6,),
+        SizedBox(height: 100,),
         BottomBarRow(),
       ]),
     );
   }
 }
-
-

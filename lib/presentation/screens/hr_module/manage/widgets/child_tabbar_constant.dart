@@ -1,22 +1,15 @@
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:flutter/material.dart';
-
+///getx
 class CenteredTabBarChild extends StatelessWidget {
-  final List<Widget> tabs;
-  final List<Widget> tabViews;
-  final double tabBarViewHeight;
-  final double tabBarViewWidth;
+ final CenteredTabBarChildController controller;
 
-  CenteredTabBarChild({
-    required this.tabs,
-    required this.tabViews,
-    this.tabBarViewHeight = 250.0,
-    this.tabBarViewWidth = 600.0,
-  });
+ CenteredTabBarChild(this.controller);
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: tabs.length,
+      length: controller.tabs.length,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -35,9 +28,9 @@ class CenteredTabBarChild extends StatelessWidget {
               ],
             ),
             height: 30,
-            width: tabBarViewWidth,
+            width: controller.tabBarViewWidth,
             child: TabBar(
-              tabs: tabs,
+              tabs: controller.tabs,
               dividerColor: Colors.transparent,
               indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(50), // Creates border
@@ -50,9 +43,9 @@ class CenteredTabBarChild extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Container(
-            height: tabBarViewHeight,
+            height: controller.tabBarViewHeight,
             child: TabBarView(
-              children: tabViews,
+              children: controller.tabViews,
             ),
           ),
         ],

@@ -54,10 +54,6 @@ class EmploymentContainerConstant extends StatelessWidget {
                         SizedBox(height: 10,),
                         Text('Employer',
                             style: ThemeManager.customTextStyle(context)),
-                        SizedBox(height: 10,),
-                        Text('Emergency Contact',
-                            style: ThemeManager.customTextStyle(context)),
-
                       ],
                     ),
                     Column(
