@@ -36,9 +36,15 @@ class CenteredTabBarChild extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50), // Creates border
                   color: Colors.white),
               indicatorSize: TabBarIndicatorSize.tab,
-              indicatorColor: Color(0xFF50B5E5),
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.black,
+              indicatorColor: Colors.white,
+              labelColor: Color(0xFF686464),
+              labelStyle: TextStyle(
+                fontFamily: 'FiraSans',
+                fontSize: 12,
+                color: Color(0xFF686464),
+                fontWeight: FontWeight.w600,
+                ),
+              unselectedLabelColor: Colors.white,
             ),
           ),
           SizedBox(height: 20),

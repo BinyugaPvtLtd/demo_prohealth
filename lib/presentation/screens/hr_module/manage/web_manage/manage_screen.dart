@@ -125,7 +125,7 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
 
         /// bottom row
         SizedBox(
-          height: 100,
+          height: 6,
         ),
         BottomBarRow(),
       ]),
