@@ -12,11 +12,9 @@ import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/hea
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/termination_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/time_off_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/profile_bar/profile_bar.dart';
-import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
 import 'package:demo_prohealth/presentation/widgets/custom_icon_button_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controller/controller.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/education_child_tabbar.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/employment_child_tabbar.dart';
@@ -78,6 +76,7 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
       AdditionalVaccinationsChildBar(),
       OtherChildTabbar(),
     ]);
+
     centeredTabBarController = Get.put(CenteredTabBarController(
       tabs: [
         Tab(text: 'Qualifications'),
@@ -109,24 +108,19 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
       scrollDirection: Axis.vertical,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         ///appbar
-        MyAppBar(),
-        SizedBox(
-          height: 4,
-        ),
-
+        // MyAppBar(),
+        // SizedBox(
+        //   height: 4,
+        // ),
         /// green blue container
         ProfileBar(),
-        SizedBox(
-          height: 25,
-        ),
+        SizedBox(height: 25,),
 
         ///bottomppbar 1,2
         CenteredTabBar(),
 
         /// bottom row
-        SizedBox(
-          height: 6,
-        ),
+        SizedBox(height: 6,),
         BottomBarRow(),
       ]),
     );

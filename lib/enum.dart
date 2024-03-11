@@ -1,4 +1,0 @@
-// enum ScreenType {
-//   Tablet,
-//   Web,
-// }

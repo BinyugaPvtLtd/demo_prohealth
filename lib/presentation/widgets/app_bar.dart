@@ -1,9 +1,32 @@
+import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/add_employee_screen.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/web_manage/manage_screen.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/app_bar_tabbar_constant.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(MyAppTabBarController(
+      tabs: [
+        Tab(text: 'Dashboard'),
+        Tab(text: 'Manage'),
+        Tab(text: 'Add Employee'),
+        Tab(text: 'Register'),
+        Tab(text: 'Onboarding'),
+      ],
+      tabViews: [
+        Center(child: Text('Dashboard Screen')),
+        DesktopWebScreen(),
+        AddEmployeeHomeScreen(),
+        Center(child: Text('Register Screen')),
+        Center(child: Text('Onboarding Screen')),
+      ],
+    ));
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         /// first row logo
         Row(
@@ -198,86 +221,115 @@ class MyAppBar extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(height: 20,),
 
         ///second row title heading
-        Row(
-          children: [
-            Expanded(
-              child: Container(
-                height: 50,
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 57),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text("Dashboard",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text("Manage",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text("Add Employee",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text("Register",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text(
-                        "Onboarding",
-                        style: TextStyle(
-                            color: Color(0xff686464),
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Container(
-                          height: 26,
-                          width: MediaQuery.of(context).size.width / 4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: Color(0xff686464),
-                              width: 1.0,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Icon(
-                                  Icons.search,
-                                  color: Color(0xff686464),
-                                ),
-                              ),
-                            ],
-                          )),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        )
+        // Row(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   mainAxisAlignment: MainAxisAlignment.start,
+        //   children: [
+        //     Expanded(
+        //       flex: 2,
+        //         child: AppBarTabBarConstant(controller)),
+        //   ],
+        // ),
+        AppBarTabBarConstant(controller),
+        // Row(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   mainAxisAlignment: MainAxisAlignment.start,
+        //   children: [
+        //     Expanded(
+        //       flex: 2,
+        //       child: AppBarTabBarConstant(controller),
+        //     ),
+        //     // Expanded(
+        //     //   flex: 3,
+        //     //   child: Padding(
+        //     //     padding: const EdgeInsets.only(left: 20.0),
+        //     //     child: Container(
+        //     //       height: 40,
+        //     //       decoration: BoxDecoration(
+        //     //         borderRadius: BorderRadius.circular(20),
+        //     //         border: Border.all(color: Color(0xff686464), width: 1.0),
+        //     //       ),
+        //     //       child: Row(
+        //     //         children: [
+        //     //           Padding(
+        //     //             padding: const EdgeInsets.only(left: 10.0),
+        //     //             child: Icon(
+        //     //               Icons.search,
+        //     //               color: Color(0xff686464),
+        //     //             ),
+        //     //           ),
+        //     //           SizedBox(width: 10),
+        //     //           Expanded(
+        //     //             child: TextField(
+        //     //               decoration: InputDecoration(
+        //     //                 border: InputBorder.none,
+        //     //                 hintText: 'Search...',
+        //     //                 hintStyle: TextStyle(color: Color(0xff686464)),
+        //     //               ),
+        //     //             ),
+        //     //           ),
+        //     //         ],
+        //     //       ),
+        //     //
+        //     //     ),
+        //     //   ),
+        //     // ),
+        //   ],
+        // ),
       ],
     );
   }
 }
+
+
+
+///old code
+// Row(
+//   children: [
+//    // AppBarTabBarConstant(controller),
+//     Row(
+//       children: [
+//         Expanded(
+//           child: Container(
+//             height: 50,
+//             color: Colors.white,
+//             child: Padding(
+//               padding: const EdgeInsets.only(left: 57),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.start,
+//                 children: [
+//                  AppBarTabBarConstant(controller),
+//                   Container(
+//                       height: 26,
+//                       width: MediaQuery.of(context).size.width / 4,
+//                       decoration: BoxDecoration(
+//                         borderRadius: BorderRadius.circular(20),
+//                         border: Border.all(
+//                           color: Color(0xff686464),
+//                           width: 1.0,
+//                         ),
+//                       ),
+//                       child: Row(
+//                         mainAxisAlignment: MainAxisAlignment.end,
+//                         children: [
+//                           Padding(
+//                             padding: const EdgeInsets.all(2.0),
+//                             child: Icon(
+//                               Icons.search,
+//                               color: Color(0xff686464),
+//                             ),
+//                           ),
+//                         ],
+//                       )),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
+//       ],
+//     )
+//   ],
+// ),

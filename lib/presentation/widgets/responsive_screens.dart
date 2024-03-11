@@ -1,3 +1,4 @@
+import 'package:demo_prohealth/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/hr_module/manage/controller/controller.dart';
 import '../screens/hr_module/manage/web_manage/manage_screen.dart';
@@ -21,7 +22,8 @@ class ResponsivePage extends StatelessWidget {
                 height: 1000,
                 child: TabletScreen());
           } else {
-            return DesktopWebScreen();
+           // return DesktopWebScreen();
+            return HomeScreen();
           }
         },
       ),
