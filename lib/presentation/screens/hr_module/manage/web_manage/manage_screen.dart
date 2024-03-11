@@ -12,7 +12,12 @@ import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/hea
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/termination_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/time_off_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/profile_bar/profile_bar.dart';
-import 'package:demo_prohealth/presentation/widgets/app_bar.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/add_employee_screen.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/app_bar.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/controller.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/dashboard_screen.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/onboarding_screen.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/register_screen.dart';
 import 'package:demo_prohealth/presentation/widgets/custom_icon_button_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,7 +37,8 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
   late CenteredTabBarChildController childController;
   late CenteredTabBarChildController childControlleOne;
   late CenteredTabBarController centeredTabBarController;
-
+  late AppBarController appBarController;
+  late AppBarController appBarControllerOne;
   @override
   void initState() {
     childController = CenteredTabBarChildController(
@@ -78,28 +84,44 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
       AdditionalVaccinationsChildBar(),
       OtherChildTabbar(),
     ]);
-    centeredTabBarController = Get.put(CenteredTabBarController(
-      tabs: [
-        Tab(text: 'Qualifications'),
-        Tab(text: 'Documents'),
-        Tab(text: 'Banking'),
-        Tab(text: 'Health Records'),
-        Tab(text: 'Inventory'),
-        Tab(text: 'Pay Rates'),
-        Tab(text: 'Termination'),
-        Tab(text: 'Time Off'),
-      ],
-      tabViews: [
-        CenteredTabBarChild(childController),
-        CenteredTabBarChild(childControlleOne),
-        BankingHeadTabbar(),
-        HealthRecordsHeadTabbar(),
-        InventoryHeadTabbar(),
-        PayRatesHeadTabbar(),
-        TerminationHeadTabbar(),
-        TimeOffHeadTabbar(),
-      ],
-    ));
+    centeredTabBarController = Get.put(
+      CenteredTabBarController(
+        tabs: [
+          Tab(text: 'Qualifications'),
+          Tab(text: 'Documents'),
+          Tab(text: 'Banking'),
+          Tab(text: 'Health Records'),
+          Tab(text: 'Inventory'),
+          Tab(text: 'Pay Rates'),
+          Tab(text: 'Termination'),
+          Tab(text: 'Time Off'),
+        ],
+        tabViews: [
+          CenteredTabBarChild(childController),
+          CenteredTabBarChild(childControlleOne),
+          BankingHeadTabbar(),
+          HealthRecordsHeadTabbar(),
+          InventoryHeadTabbar(),
+          PayRatesHeadTabbar(),
+          TerminationHeadTabbar(),
+          TimeOffHeadTabbar(),
+        ],
+      ),
+    );
+    appBarController = Get.put(AppBarController(toptabs: [
+      Tab(text: 'Dashboard'),
+      Tab(text: 'Manage'),
+      Tab(text: 'addEmployee'),
+      Tab(text: 'Register'),
+      Tab(text: 'Onboarding'),
+    ], toptabViews: [
+      DashboardScreen(),
+      DesktopWebScreen(),
+      AddEmplyeeScreen(),
+      RegisterScreen(),
+      OnBoardingScreen(),
+    ]));
+
     super.initState();
   }
 

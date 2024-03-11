@@ -68,29 +68,32 @@ class ProfileBar extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 50,
-                          height: 50,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Image.asset(
-                                'images/profile.png',
-                                height: 30,
-                                width: 30,
-                              ),
-                              // you can replace
-                              const CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                    Colors.green),
-                                strokeWidth: 0.9,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Image.asset(
+                                  'images/profile.png',
+                                  height: 50,
+                                  width: 50,
+                                ),
+                                // you can replace
+                                const CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.green),
+                                    strokeWidth: 3,
+                                    value: 0.57),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     )
                   ],
                 )),
