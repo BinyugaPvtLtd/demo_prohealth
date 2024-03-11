@@ -1,9 +1,32 @@
+import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/add_employee_screen.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/web_manage/manage_screen.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/app_bar_tabbar_constant.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(MyAppTabBarController(
+      tabs: [
+        Tab(text: 'Dashboard'),
+        Tab(text: 'Manage'),
+        Tab(text: 'Add Employee'),
+        Tab(text: 'Register'),
+        Tab(text: 'Onboarding'),
+      ],
+      tabViews: [
+        Center(child: Text('Dashboard Screen')),
+        DesktopWebScreen(),
+        AddEmployeeHomeScreen(),
+        Center(child: Text('Register Screen')),
+        Center(child: Text('Onboarding Screen')),
+      ],
+    ));
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         /// first row logo
         Row(
@@ -198,146 +221,115 @@ class MyAppBar extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(height: 20,),
 
         ///second row title heading
-        ///main code
-        Row(
-          children: [
-            Expanded(
-              child: Container(
-                height: 50,
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 57),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text("Dashboard",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text("Manage",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text("Add Employee",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text("Register",
-                          style: TextStyle(
-                              color: Color(0xff686464),
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Text(
-                        "Onboarding",
-                        style: TextStyle(
-                            color: Color(0xff686464),
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 20,
-                      ),
-                      Container(
-                          height: 26,
-                          width: MediaQuery.of(context).size.width / 4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: Color(0xff686464),
-                              width: 1.0,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Icon(
-                                  Icons.search,
-                                  color: Color(0xff686464),
-                                ),
-                              ),
-                            ],
-                          )),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        )
+        // Row(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   mainAxisAlignment: MainAxisAlignment.start,
+        //   children: [
+        //     Expanded(
+        //       flex: 2,
+        //         child: AppBarTabBarConstant(controller)),
+        //   ],
+        // ),
+        AppBarTabBarConstant(controller),
+        // Row(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   mainAxisAlignment: MainAxisAlignment.start,
+        //   children: [
+        //     Expanded(
+        //       flex: 2,
+        //       child: AppBarTabBarConstant(controller),
+        //     ),
+        //     // Expanded(
+        //     //   flex: 3,
+        //     //   child: Padding(
+        //     //     padding: const EdgeInsets.only(left: 20.0),
+        //     //     child: Container(
+        //     //       height: 40,
+        //     //       decoration: BoxDecoration(
+        //     //         borderRadius: BorderRadius.circular(20),
+        //     //         border: Border.all(color: Color(0xff686464), width: 1.0),
+        //     //       ),
+        //     //       child: Row(
+        //     //         children: [
+        //     //           Padding(
+        //     //             padding: const EdgeInsets.only(left: 10.0),
+        //     //             child: Icon(
+        //     //               Icons.search,
+        //     //               color: Color(0xff686464),
+        //     //             ),
+        //     //           ),
+        //     //           SizedBox(width: 10),
+        //     //           Expanded(
+        //     //             child: TextField(
+        //     //               decoration: InputDecoration(
+        //     //                 border: InputBorder.none,
+        //     //                 hintText: 'Search...',
+        //     //                 hintStyle: TextStyle(color: Color(0xff686464)),
+        //     //               ),
+        //     //             ),
+        //     //           ),
+        //     //         ],
+        //     //       ),
+        //     //
+        //     //     ),
+        //     //   ),
+        //     // ),
+        //   ],
+        // ),
       ],
     );
   }
 }
-//
-// class BarTwo extends StatelessWidget {
-//   final AppBarController appBarController;
-//
-//   BarTwo(this.appBarController);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return DefaultTabController(
-//       length: appBarController.toptabs.length,
-//       child: Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: <Widget>[
-//           Container(
-//             decoration: BoxDecoration(
-//               borderRadius: BorderRadius.circular(24),
-//               color: Color(0xFF50B5E5),
-//               boxShadow: [
-//                 BoxShadow(
-//                   // color: Colors.black.withOpacity(0.2),
-//                   color: Colors.black.withOpacity(0.25),
-//                   spreadRadius: 1,
-//                   blurRadius: 4,
-//                   offset: Offset(0, 3),
-//                 ),
-//               ],
-//             ),
-//             height: 30,
-//             width: appBarController.toptabBarViewWidth,
-//             child: TabBar(
-//               tabs: appBarController.toptabs,
-//               dividerColor: Colors.transparent,
-//               indicator: BoxDecoration(
-//                   borderRadius: BorderRadius.circular(50), // Creates border
-//                   color: Colors.white),
-//               indicatorSize: TabBarIndicatorSize.tab,
-//               indicatorColor: Colors.white,
-//               labelColor: Color(0xFF686464),
-//               labelStyle: TextStyle(
-//                 fontFamily: 'FiraSans',
-//                 fontSize: 12,
-//                 color: Color(0xFF686464),
-//                 fontWeight: FontWeight.w600,
+
+
+
+///old code
+// Row(
+//   children: [
+//    // AppBarTabBarConstant(controller),
+//     Row(
+//       children: [
+//         Expanded(
+//           child: Container(
+//             height: 50,
+//             color: Colors.white,
+//             child: Padding(
+//               padding: const EdgeInsets.only(left: 57),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.start,
+//                 children: [
+//                  AppBarTabBarConstant(controller),
+//                   Container(
+//                       height: 26,
+//                       width: MediaQuery.of(context).size.width / 4,
+//                       decoration: BoxDecoration(
+//                         borderRadius: BorderRadius.circular(20),
+//                         border: Border.all(
+//                           color: Color(0xff686464),
+//                           width: 1.0,
+//                         ),
+//                       ),
+//                       child: Row(
+//                         mainAxisAlignment: MainAxisAlignment.end,
+//                         children: [
+//                           Padding(
+//                             padding: const EdgeInsets.all(2.0),
+//                             child: Icon(
+//                               Icons.search,
+//                               color: Color(0xff686464),
+//                             ),
+//                           ),
+//                         ],
+//                       )),
+//                 ],
 //               ),
-//               unselectedLabelColor: Colors.white,
 //             ),
 //           ),
-//           SizedBox(height: 20),
-//           Container(
-//             height: appBarController.toptabBarViewHeight,
-//             child: TabBarView(
-//               children: appBarController.toptabViews,
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+//         ),
+//       ],
+//     )
+//   ],
+// ),
