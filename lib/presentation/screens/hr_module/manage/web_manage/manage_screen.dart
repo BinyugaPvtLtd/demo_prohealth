@@ -21,12 +21,12 @@ import '../widgets/child_tabbar_screen/qualifications_child/employment_child_tab
 import '../widgets/child_tabbar_screen/qualifications_child/licenses_child_tabbar.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/references_child_tabbar.dart';
 
-class DesktopWebScreen extends StatefulWidget {
+class ManageScreen extends StatefulWidget {
   @override
-  State<DesktopWebScreen> createState() => _DesktopWebScreenState();
+  State<ManageScreen> createState() => _ManageScreenState();
 }
 
-class _DesktopWebScreenState extends State<DesktopWebScreen> {
+class _ManageScreenState extends State<ManageScreen> {
   late CenteredTabBarChildController childController;
   late CenteredTabBarChildController childControlleOne;
   late CenteredTabBarController centeredTabBarController;
@@ -104,25 +104,18 @@ class _DesktopWebScreenState extends State<DesktopWebScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        ///appbar
-        // MyAppBar(),
-        // SizedBox(
-        //   height: 4,
-        // ),
-        /// green blue container
-        ProfileBar(),
-        SizedBox(height: 25,),
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start, children: [
+      /// green blue container
+      ProfileBar(),
+      SizedBox(height: 25,),
 
-        ///bottomppbar 1,2
-        CenteredTabBar(),
+      ///bottomppbar 1,2
+      CenteredTabBar(),
 
-        /// bottom row
-        SizedBox(height: 6,),
-        BottomBarRow(),
-      ]),
-    );
+      /// bottom row
+      SizedBox(height: 6,),
+      BottomBarRow(),
+    ]);
   }
 }
