@@ -21,8 +21,8 @@ class MyAppTabBarController extends GetxController with GetSingleTickerProviderS
   MyAppTabBarController({
     required this.tabs,
     required this.tabViews,
-    this.tabBarViewHeight = 650.0,
-    this.tabBarViewWidth = 650.0});
+    this.tabBarViewHeight = 700.0,
+    required this.tabBarViewWidth});
 
   @override
   void onInit() {

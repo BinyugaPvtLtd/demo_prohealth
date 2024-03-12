@@ -18,11 +18,11 @@ class MyAppBar extends StatelessWidget {
       ],
       tabViews: [
         Center(child: Text('Dashboard Screen')),
-        DesktopWebScreen(),
+        ManageScreen(),
         AddEmployeeHomeScreen(),
         Center(child: Text('Register Screen')),
         Center(child: Text('Onboarding Screen')),
-      ],
+      ], tabBarViewWidth: MediaQuery.of(context).size.width/1.15,
     ));
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -283,53 +283,3 @@ class MyAppBar extends StatelessWidget {
     );
   }
 }
-
-
-
-///old code
-// Row(
-//   children: [
-//    // AppBarTabBarConstant(controller),
-//     Row(
-//       children: [
-//         Expanded(
-//           child: Container(
-//             height: 50,
-//             color: Colors.white,
-//             child: Padding(
-//               padding: const EdgeInsets.only(left: 57),
-//               child: Row(
-//                 mainAxisAlignment: MainAxisAlignment.start,
-//                 children: [
-//                  AppBarTabBarConstant(controller),
-//                   Container(
-//                       height: 26,
-//                       width: MediaQuery.of(context).size.width / 4,
-//                       decoration: BoxDecoration(
-//                         borderRadius: BorderRadius.circular(20),
-//                         border: Border.all(
-//                           color: Color(0xff686464),
-//                           width: 1.0,
-//                         ),
-//                       ),
-//                       child: Row(
-//                         mainAxisAlignment: MainAxisAlignment.end,
-//                         children: [
-//                           Padding(
-//                             padding: const EdgeInsets.all(2.0),
-//                             child: Icon(
-//                               Icons.search,
-//                               color: Color(0xff686464),
-//                             ),
-//                           ),
-//                         ],
-//                       )),
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ),
-//       ],
-//     )
-//   ],
-// ),
