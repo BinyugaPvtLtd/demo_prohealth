@@ -1,7 +1,7 @@
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../widgets/app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

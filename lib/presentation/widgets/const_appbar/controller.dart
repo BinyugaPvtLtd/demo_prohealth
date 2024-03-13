@@ -10,12 +10,11 @@ class AppBarController extends GetxController
   final double toptabBarViewHeight;
   final double toptabBarViewWidth;
 
-  AppBarController({
-    required this.toptabs,
-    required this.toptabViews,
-    this.toptabBarViewHeight = 250.0,
-    this.toptabBarViewWidth = 600.0,
-  });
+  AppBarController(
+      {required this.toptabs,
+      required this.toptabViews,
+      this.toptabBarViewHeight = 250.0,
+      required this.toptabBarViewWidth});
 
   @override
   void onInit() {
@@ -29,6 +28,9 @@ class AppBarController extends GetxController
     super.onClose();
   }
 }
+
+///
+
 //
 // class CenteredTabBarChildController extends
 // GetxController with GetSingleTickerProviderStateMixin  {
