@@ -108,7 +108,7 @@ class _ManageScreenState extends State<ManageScreen> {
         crossAxisAlignment: CrossAxisAlignment.start, children: [
       /// green blue container
       ProfileBar(),
-      SizedBox(height: 25,),
+      SizedBox(height: 10,),
 
       ///bottomppbar 1,2
       CenteredTabBar(),

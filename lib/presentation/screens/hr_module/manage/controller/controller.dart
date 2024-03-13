@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../register/register_enroll_popup.dart';
+
 class MyController extends GetxController {
-  /// Flag to determine if it's a tablet screen
+  // Flag to determine if it's a tablet screen
   RxBool isTabletScreen = false.obs;
 
-  /// Method to check and set the screen type
+  // Method to check and set the screen type
   void checkScreenType(double screenWidth) {
     isTabletScreen.value = screenWidth <= 800;
   }
@@ -21,7 +23,7 @@ class MyAppTabBarController extends GetxController with GetSingleTickerProviderS
   MyAppTabBarController({
     required this.tabs,
     required this.tabViews,
-    this.tabBarViewHeight = 700.0,
+    this.tabBarViewHeight = 600.0,
     required this.tabBarViewWidth});
 
   @override
@@ -49,7 +51,7 @@ class CenteredTabBarController extends GetxController with GetSingleTickerProvid
   CenteredTabBarController({
     required this.tabs,
     required this.tabViews,
-    this.tabBarViewHeight = 350.0,
+    this.tabBarViewHeight = 320.0,//350
     this.tabBarViewWidth = 600.0,
   });
 
@@ -76,7 +78,7 @@ class CenteredTabBarChildController extends GetxController with GetSingleTickerP
   CenteredTabBarChildController({
     required this.tabs,
     required this.tabViews,
-    this.tabBarViewHeight = 250.0,
+    this.tabBarViewHeight = 250.0,//250
     this.tabBarViewWidth = 600.0,
   });
 
@@ -93,3 +95,16 @@ class CenteredTabBarChildController extends GetxController with GetSingleTickerP
   }
 }
 
+class RegisterController extends GetxController {
+  final isDialogOpen = false.obs;
+
+  void openDialog(BuildContext context) {
+    isDialogOpen.value = true;
+    CustomAlertDialog.show(context);
+  }
+
+
+  void closeDialog() {
+    isDialogOpen.value = false;
+  }
+}

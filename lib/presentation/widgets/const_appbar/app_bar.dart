@@ -2,6 +2,7 @@ import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/add_e
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/web_manage/manage_screen.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/app_bar_tabbar_constant.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,9 +21,9 @@ class MyAppBar extends StatelessWidget {
         Center(child: Text('Dashboard Screen')),
         ManageScreen(),
         AddEmployeeHomeScreen(),
-        Center(child: Text('Register Screen')),
+        RegisterScreen(),
         Center(child: Text('Onboarding Screen')),
-      ], tabBarViewWidth: MediaQuery.of(context).size.width/1.15,
+      ], tabBarViewWidth: MediaQuery.of(context).size.width/1.04,
     ));
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -234,51 +235,6 @@ class MyAppBar extends StatelessWidget {
         //   ],
         // ),
         AppBarTabBarConstant(controller),
-        // Row(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   mainAxisAlignment: MainAxisAlignment.start,
-        //   children: [
-        //     Expanded(
-        //       flex: 2,
-        //       child: AppBarTabBarConstant(controller),
-        //     ),
-        //     // Expanded(
-        //     //   flex: 3,
-        //     //   child: Padding(
-        //     //     padding: const EdgeInsets.only(left: 20.0),
-        //     //     child: Container(
-        //     //       height: 40,
-        //     //       decoration: BoxDecoration(
-        //     //         borderRadius: BorderRadius.circular(20),
-        //     //         border: Border.all(color: Color(0xff686464), width: 1.0),
-        //     //       ),
-        //     //       child: Row(
-        //     //         children: [
-        //     //           Padding(
-        //     //             padding: const EdgeInsets.only(left: 10.0),
-        //     //             child: Icon(
-        //     //               Icons.search,
-        //     //               color: Color(0xff686464),
-        //     //             ),
-        //     //           ),
-        //     //           SizedBox(width: 10),
-        //     //           Expanded(
-        //     //             child: TextField(
-        //     //               decoration: InputDecoration(
-        //     //                 border: InputBorder.none,
-        //     //                 hintText: 'Search...',
-        //     //                 hintStyle: TextStyle(color: Color(0xff686464)),
-        //     //               ),
-        //     //             ),
-        //     //           ),
-        //     //         ],
-        //     //       ),
-        //     //
-        //     //     ),
-        //     //   ),
-        //     // ),
-        //   ],
-        // ),
       ],
     );
   }

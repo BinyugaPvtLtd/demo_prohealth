@@ -23,3 +23,16 @@ class ThemeManagerDark {
     );
   }
 }
+
+
+class RegisterTableHead {
+  static TextStyle customTextStyle(BuildContext context) {
+    double fontSize = 12;
+    return TextStyle(
+      fontFamily: 'FiraSans',
+      fontSize: fontSize,
+      color: Colors.white,
+      fontWeight: FontWeight.w700,
+    );
+  }
+}
