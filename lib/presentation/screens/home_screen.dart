@@ -15,9 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: MyAppBar(),
-    );
+    return MyAppBar();
   }
 }
