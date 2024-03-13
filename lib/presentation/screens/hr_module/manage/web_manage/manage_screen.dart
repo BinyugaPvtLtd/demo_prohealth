@@ -15,6 +15,7 @@ import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/pro
 import 'package:demo_prohealth/presentation/widgets/custom_icon_button_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../controller/controller.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/education_child_tabbar.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/employment_child_tabbar.dart';
@@ -48,14 +49,14 @@ class _ManageScreenState extends State<ManageScreen> {
               children: [
                 Container(
                   width: 100,
-                  margin: EdgeInsets.only(right: 50),
+                  margin: EdgeInsets.only(right: 40),
                   child: CustomIconButton(
                       text: 'Add', icon: Icons.add, onPressed: () {}),
                 ),
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 2,
             ),
             EmploymentContainerConstant(),
           ],
@@ -104,17 +105,20 @@ class _ManageScreenState extends State<ManageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       /// green blue container
       ProfileBar(),
-      SizedBox(height: 10,),
+      SizedBox(
+        height: 10,
+      ),
 
       ///bottomppbar 1,2
       CenteredTabBar(),
 
       /// bottom row
-      SizedBox(height: 6,),
+      SizedBox(
+        height: 6,
+      ),
       BottomBarRow(),
     ]);
   }

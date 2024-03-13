@@ -16,7 +16,7 @@ class AppBarTabBarConstant extends StatelessWidget {
         children: <Widget>[
           Container(
             color: Colors.transparent,
-            height: 33,
+            height: MediaQuery.of(context).size.height / 18,
             width: controller.tabBarViewWidth,
             child: Row(
               children: [

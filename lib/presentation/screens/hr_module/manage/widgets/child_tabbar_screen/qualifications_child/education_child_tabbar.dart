@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class EducationChildTabbar extends StatelessWidget {
   const EducationChildTabbar({super.key});
 
@@ -6,7 +7,9 @@ class EducationChildTabbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
-      child: Center(child: Text('Education'),),
+      child: Center(
+        child: Text('Education'),
+      ),
     );
   }
 }
