@@ -56,7 +56,7 @@ class _ManageScreenState extends State<ManageScreen> {
               ],
             ),
             SizedBox(
-              height: 2,
+              height: 10,
             ),
             EmploymentContainerConstant(),
           ],

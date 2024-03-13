@@ -2,9 +2,10 @@ import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/add_e
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/web_manage/manage_screen.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/app_bar_tabbar_constant.dart';
-import 'package:demo_prohealth/presentation/widgets/const_appbar/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../screens/hr_module/register/register_screen.dart';
 
 class MyAppBar extends StatelessWidget {
   @override
@@ -24,7 +25,7 @@ class MyAppBar extends StatelessWidget {
         RegisterScreen(),
         Center(child: Text('Onboarding Screen')),
       ],
-      tabBarViewWidth: MediaQuery.of(context).size.width / 1.04,
+      tabBarViewWidth: MediaQuery.of(context).size.width / 1.1,
     ));
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -109,7 +110,7 @@ class MyAppBar extends StatelessWidget {
                         child: Text("Human Resource Manager",
                             style: TextStyle(
                                 color: Color(0xff2B647F),
-                                fontSize: 12,
+                                fontSize: MediaQuery.of(context).size.width/120,
                                 fontWeight: FontWeight.bold)),
                       ),
                     ),
@@ -133,7 +134,7 @@ class MyAppBar extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width / 20,
+                      width: MediaQuery.of(context).size.width / 25,
                     ),
                     Container(
                         height: 33,

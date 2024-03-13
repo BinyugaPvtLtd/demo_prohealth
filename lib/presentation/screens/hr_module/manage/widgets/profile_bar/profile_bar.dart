@@ -10,7 +10,7 @@ class ProfileBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: MediaQuery.of(context).size.width / 6),
+      padding: EdgeInsets.only(right: MediaQuery.of(context).size.width / 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -99,7 +99,7 @@ class ProfileBar extends StatelessWidget {
                           ),
                           Text(
                             "Annual skills 92%",
-                            style: ThemeManagerGrey.customTextStyle(context),
+                            style: ThemeManager.customTextStyle(context),
                           ),
                         ],
                       ),
