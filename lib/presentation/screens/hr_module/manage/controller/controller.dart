@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../register/register_enroll_popup.dart';
 
 class MyController extends GetxController {
@@ -37,7 +36,6 @@ class MyAppTabBarController extends GetxController with GetSingleTickerProviderS
     tabController.dispose();
     super.onClose();
   }
-
 }
 
 class CenteredTabBarController extends GetxController with GetSingleTickerProviderStateMixin {
@@ -100,9 +98,8 @@ class RegisterController extends GetxController {
 
   void openDialog(BuildContext context) {
     isDialogOpen.value = true;
-    CustomAlertDialog.show(context);
+    RegisterEnrollAlertDialog.show(context);
   }
-
 
   void closeDialog() {
     isDialogOpen.value = false;

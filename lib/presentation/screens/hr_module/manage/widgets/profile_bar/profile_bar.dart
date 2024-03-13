@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../app/theme_manager.dart';
+
 class ProfileBar extends StatelessWidget {
   const ProfileBar({
     super.key,
@@ -8,7 +10,7 @@ class ProfileBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 100),
+      padding: EdgeInsets.only(right: MediaQuery.of(context).size.width / 6),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -19,7 +21,6 @@ class ProfileBar extends StatelessWidget {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      // color: Colors.black.withOpacity(0.2),
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 5,
@@ -27,23 +28,14 @@ class ProfileBar extends StatelessWidget {
                     ),
                   ],
                   color: Color(0xFF52A889),
-                  // color: Color(0xFF52A889),
                 ),
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Profile",
-                        style: TextStyle(color: Colors.white, fontSize: 12),
+                        "Profile\n100%",
+                        style: ThemeManagerWhite.customTextStyle(context),
                       ),
-                      Text(
-                        "100%",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 12),
-                      )
                     ])),
           ),
           Expanded(
@@ -70,8 +62,8 @@ class ProfileBar extends StatelessWidget {
                   children: [
                     ///1st column
                     Padding(
-                      padding: const EdgeInsets.only(
-                          top: 16, left: 15, right: 7, bottom: 10),
+                      padding:
+                      const EdgeInsets.only(top: 16, left: 15, bottom: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -103,30 +95,22 @@ class ProfileBar extends StatelessWidget {
                           ),
                           Text(
                             "Active",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 11,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: ThemeManagerBlack.customTextStyle(context),
                           ),
                           Text(
                             "Annual skills 92%",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 11,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: ThemeManagerGrey.customTextStyle(context),
                           ),
                         ],
                       ),
                     ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 50,
+                    ),
 
                     ///2 nd column
                     Padding(
-                      padding: const EdgeInsets.only(
-                          top: 16, left: 15, right: 7, bottom: 10),
+                      padding: const EdgeInsets.only(top: 16, bottom: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -134,12 +118,7 @@ class ProfileBar extends StatelessWidget {
                           ///text john scott
                           Text(
                             "John Scott",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: ThemeManagerBlack.customTextStyle(context),
                           ),
                           Container(
                             height: 17,
@@ -147,12 +126,8 @@ class ProfileBar extends StatelessWidget {
                             child: ElevatedButton(
                               child: Text(
                                 "Physical Thearpy",
-                                style: TextStyle(
-                                  fontFamily: 'FiraSans',
-                                  fontSize: 6,
-                                  color: Colors.white,
-                                  // fontWeight: FontWeight.w200,
-                                ),
+                                style:
+                                ThemeManagerWhite.customTextStyle(context),
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
@@ -166,43 +141,27 @@ class ProfileBar extends StatelessWidget {
                           ),
                           Text(
                             "Employment Type",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Saan joes.24",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Address",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerBlack.customTextStyle(context),
                           ),
                           Text(
                             "House No., Street No.\n Area City, Zip Code",
                             textAlign: TextAlign.start,
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.lightBlue,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style:
+                            ThemeManagerAccentblue.customTextStyle(context),
                           ),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 50,
                     ),
 
                     /// 3rd column
@@ -210,8 +169,6 @@ class ProfileBar extends StatelessWidget {
                       padding: const EdgeInsets.only(
                         bottom: 10,
                         top: 10,
-                        left: 15,
-                        right: 7,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,66 +177,38 @@ class ProfileBar extends StatelessWidget {
                           ///text john scott
                           Text(
                             "Age",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Gender",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Social Security No.",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Phone No.",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Personal No.",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Work No.",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                         ],
                       ),
                     ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 50,
+                    ),
 
                     /// 4th column
                     Padding(
-                      padding: const EdgeInsets.only(
-                          top: 10, left: 15, right: 35, bottom: 10),
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -287,60 +216,87 @@ class ProfileBar extends StatelessWidget {
                           ///text john scott
                           Text(
                             "05-03-1997(27)",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Male",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
-                            "(+1)-123-567",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            "****-**-***",
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
-                          Text(
-                            "(+1)-123-567",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                "(+1)-123-567",
+                                style:
+                                ThemeManagerDark.customTextStyle(context),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Icon(
+                                Icons.phone,
+                                color: Colors.green,
+                                size: 13,
+                              ),
+                              Icon(
+                                Icons.comment,
+                                color: Colors.blue,
+                                size: 13,
+                              )
+                            ],
                           ),
-                          Text(
-                            "(+1)-123-567",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                "(+1)-123-567",
+                                style:
+                                ThemeManagerDark.customTextStyle(context),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Icon(
+                                Icons.phone,
+                                color: Colors.green,
+                                size: 13,
+                              ),
+                              Icon(
+                                Icons.comment,
+                                color: Colors.blue,
+                                size: 13,
+                              )
+                            ],
                           ),
-                          Text(
-                            "(+1)-123-567",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                "(+1)-123-567",
+                                style:
+                                ThemeManagerDark.customTextStyle(context),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Icon(
+                                Icons.phone,
+                                color: Colors.green,
+                                size: 13,
+                              ),
+                              Icon(
+                                Icons.comment,
+                                color: Colors.blue,
+                                size: 13,
+                              )
+                            ],
                           ),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 50,
                     ),
 
                     ///5th column
@@ -348,8 +304,6 @@ class ProfileBar extends StatelessWidget {
                       padding: const EdgeInsets.only(
                         bottom: 10,
                         top: 10,
-                        left: 15,
-                        right: 7,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -358,147 +312,51 @@ class ProfileBar extends StatelessWidget {
                           ///text john scott
                           Text(
                             "Personal Email",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Work Email",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Zone",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Speciality ",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Service",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Work No.",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    /// 6th column
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 10, left: 15, right: 7, bottom: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          ///text john scott
-                          Text(
-                            "personal@gmail.com",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.blueAccent,
-                              decoration: TextDecoration.underline,
-                              decorationColor: Colors.blueAccent,
-                            ),
-                          ),
-                          Text(
-                            "personal@gmail.com",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.blueAccent,
-                              decoration: TextDecoration.underline,
-                              decorationColor: Colors.blueAccent,
-                            ),
-                          ),
-                          Text(
-                            "Prohealth San Joes 74",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
-                          ),
-                          Text(
-                            "Phone No.",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
-                          ),
-                          Text(
-                            "Physical Thearpy",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
-                          ),
-                          Text(
-                            "NA",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 70,
+                      width: MediaQuery.of(context).size.width / 50,
                     ),
 
-                    ///7th column
+                    /// 6th column
                     Padding(
-                      padding: const EdgeInsets.only(
-                          top: 10, left: 15, right: 7, bottom: 10),
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ///text john scott
-                          Text(
-                            "personal@gmail.com",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.blueAccent,
-                              decoration: TextDecoration.underline,
-                              decorationColor: Colors.blueAccent,
-                            ),
-                          ),
+                          Text("personal@gmail.com",
+                              style: TextStyle(
+                                fontFamily: 'FiraSans',
+                                fontSize: 9,
+                                color: Colors.blueAccent,
+                                decoration: TextDecoration.underline,
+                                decorationColor: Colors.blueAccent,
+                              )),
                           Text(
                             "personal@gmail.com",
                             style: TextStyle(
@@ -511,39 +369,149 @@ class ProfileBar extends StatelessWidget {
                           ),
                           Text(
                             "Prohealth San Joes 74",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Phone No.",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "Physical Thearpy",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
                           ),
                           Text(
                             "NA",
-                            style: TextStyle(
-                              fontFamily: 'FiraSans',
-                              fontSize: 9,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: ThemeManagerDark.customTextStyle(context),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 8,
+                    ),
+
+                    ///7th column
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 10,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        // mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ///text john scott
+                          Row(
+                            children: [
+                              Text(
+                                "Hide Date",
+                                style:
+                                ThemeManagerDark.customTextStyle(context),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 40,
+                              ),
+                              Text(
+                                "09/02/2024(11 PM)",
+                                style:
+                                ThemeManagerDark.customTextStyle(context),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height / 20,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "Expired License",
+                                style: ThemeManagerAccentblue.customTextStyle(
+                                    context),
+                              ),
+                              ClipOval(
+                                  child: Container(
+                                    height: 12,
+                                    width: 12,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey.shade600,
+                                              spreadRadius: 1,
+                                              blurRadius: 10,
+                                              offset: const Offset(0, 15))
+                                        ]),
+                                    child: Text(
+                                      "0",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 7,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  )),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "About To Expired License",
+                                style: ThemeManagerAccentblue.customTextStyle(
+                                    context),
+                              ),
+                              ClipOval(
+                                  child: Container(
+                                    height: 12,
+                                    width: 12,
+                                    decoration: BoxDecoration(
+                                        color: Colors.green,
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey.shade600,
+                                              spreadRadius: 1,
+                                              blurRadius: 10,
+                                              offset: const Offset(0, 15))
+                                        ]),
+                                    child: Text(
+                                      "2",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 7,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  )),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "Up To Date License",
+                                style: ThemeManagerAccentblue.customTextStyle(
+                                    context),
+                              ),
+                              ClipOval(
+                                  child: Container(
+                                    height: 12,
+                                    width: 12,
+                                    decoration: BoxDecoration(
+                                        color: Colors.yellow,
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey.shade600,
+                                              spreadRadius: 1,
+                                              blurRadius: 10,
+                                              offset: const Offset(0, 15))
+                                        ]),
+                                    child: Text(
+                                      "1",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 7,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  )),
+                            ],
                           ),
                         ],
                       ),
