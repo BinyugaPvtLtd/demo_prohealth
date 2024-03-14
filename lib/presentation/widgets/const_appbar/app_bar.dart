@@ -3,9 +3,10 @@ import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/add_e
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/web_manage/manage_screen.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/app_bar_tabbar_constant.dart';
-import 'package:demo_prohealth/presentation/widgets/const_appbar/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../screens/hr_module/register/register_screen.dart';
 
 class MyAppBar extends StatelessWidget {
   @override

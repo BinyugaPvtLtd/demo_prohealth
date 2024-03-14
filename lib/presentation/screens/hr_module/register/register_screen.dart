@@ -1,8 +1,8 @@
 import 'package:demo_prohealth/app/theme_manager.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/profile_bar/profile_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../widgets/custom_icon_button_constant.dart';
+import '../../../widgets/profile_bar/profile_bar.dart';
 import '../manage/controller/controller.dart';
 
 class RegisterScreen extends StatelessWidget {
