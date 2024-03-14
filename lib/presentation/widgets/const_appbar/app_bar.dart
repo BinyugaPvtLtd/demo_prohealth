@@ -1,11 +1,11 @@
+import 'package:demo_prohealth/app/theme_manager.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/add_employee_screen.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/web_manage/manage_screen.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/app_bar_tabbar_constant.dart';
+import 'package:demo_prohealth/presentation/widgets/const_appbar/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../screens/hr_module/register/register_screen.dart';
 
 class MyAppBar extends StatelessWidget {
   @override
@@ -25,7 +25,7 @@ class MyAppBar extends StatelessWidget {
         RegisterScreen(),
         Center(child: Text('Onboarding Screen')),
       ],
-      tabBarViewWidth: MediaQuery.of(context).size.width / 1.1,
+      tabBarViewWidth: MediaQuery.of(context).size.width / 1.04,
     ));
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -64,8 +64,8 @@ class MyAppBar extends StatelessWidget {
                   ),
                   child: Row(children: [
                     Padding(
-                      padding: const EdgeInsets.only(
-                        left: 15,
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width / 99,
                       ),
                       child: Container(
                         // padding: EdgeInsets.all(2),
@@ -108,19 +108,18 @@ class MyAppBar extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text("Human Resource Manager",
-                            style: TextStyle(
-                                color: Color(0xff2B647F),
-                                fontSize: MediaQuery.of(context).size.width/120,
-                                fontWeight: FontWeight.bold)),
+                            style:
+                                ThemeManagerLightblue.customTextStyle(context)),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(2.0),
+                      padding: EdgeInsets.all(
+                          MediaQuery.of(context).size.width / 200),
                       child: ClipOval(
                         child: Material(
-                          color: Colors.white, // Button color
+                          color: Colors.white,
                           child: InkWell(
-                            splashColor: Colors.white, // Splash color
+                            splashColor: Colors.white,
                             onTap: () {},
                             child: SizedBox(
                                 width: MediaQuery.of(context).size.width / 37,
@@ -134,7 +133,7 @@ class MyAppBar extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width / 25,
+                      width: MediaQuery.of(context).size.width / 20,
                     ),
                     Container(
                         height: 33,
@@ -149,17 +148,17 @@ class MyAppBar extends StatelessWidget {
                               Icon(
                                 Icons.phone,
                                 color: Color(0xff2B647F),
-                                size: 20,
+                                size: MediaQuery.of(context).size.width / 50,
                               ),
                               Icon(
                                 Icons.comment,
                                 color: Color(0xff2B647F),
-                                size: 20,
+                                size: MediaQuery.of(context).size.width / 50,
                               ),
                               Icon(
                                 Icons.mail,
                                 color: Color(0xff2B647F),
-                                size: 20,
+                                size: MediaQuery.of(context).size.width / 50,
                               )
                             ])),
                     SizedBox(
@@ -167,7 +166,7 @@ class MyAppBar extends StatelessWidget {
                     ),
                     Container(
                       height: 33,
-                      width: 100,
+                      width: MediaQuery.of(context).size.width / 15,
                       decoration: BoxDecoration(
                         border: Border.all(width: 1, color: Colors.white),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -183,13 +182,13 @@ class MyAppBar extends StatelessWidget {
                               children: [
                                 Text(
                                   "Admin",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
+                                  style: RegisterTableHead.customTextStyle(
+                                      context),
                                 ),
                                 Icon(
                                   Icons.arrow_drop_down_rounded,
-                                  color: Colors.white, // Set icon color
+                                  color: Colors.white,
+                                  size: MediaQuery.of(context).size.width / 60,
                                 ),
                               ]),
                         ),
@@ -207,6 +206,7 @@ class MyAppBar extends StatelessWidget {
                           child: Icon(
                             Icons.notifications_none_outlined,
                             color: Colors.white,
+                            size: MediaQuery.of(context).size.width / 50,
                           )),
                     ),
                     InkWell(
@@ -218,6 +218,7 @@ class MyAppBar extends StatelessWidget {
                           child: Icon(
                             Icons.settings,
                             color: Colors.white,
+                            size: MediaQuery.of(context).size.width / 50,
                           )),
                     ),
                   ])),

@@ -11,8 +11,8 @@ import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/hea
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/pay_rates_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/termination_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/time_off_head_tabbar.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/profile_bar/profile_bar.dart';
 import 'package:demo_prohealth/presentation/widgets/custom_icon_button_constant.dart';
+import 'package:demo_prohealth/presentation/widgets/profile_bar/profile_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -112,13 +112,13 @@ class _ManageScreenState extends State<ManageScreen> {
         height: 10,
       ),
 
-      ///bottomppbar 1,2
+      ///TabBar
       CenteredTabBar(),
-
-      /// bottom row
       SizedBox(
         height: 6,
       ),
+
+      /// bottom row
       BottomBarRow(),
     ]);
   }

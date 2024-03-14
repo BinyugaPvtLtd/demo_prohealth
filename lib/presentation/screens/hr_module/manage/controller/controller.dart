@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import '../../register/register_enroll_popup.dart';
 
 class MyController extends GetxController {
-  // Flag to determine if it's a tablet screen
+  /// Flag to determine if it's a tablet screen
   RxBool isTabletScreen = false.obs;
 
-  // Method to check and set the screen type
+  /// Method to check and set the screen type
   void checkScreenType(double screenWidth) {
     isTabletScreen.value = screenWidth <= 800;
   }
@@ -117,7 +117,7 @@ class AddEmployeeController extends GetxController
   AddEmployeeController({
     required this.tabs,
     required this.tabViews,
-    this.tabBarViewHeight = 300.0, //250
+    this.tabBarViewHeight = 500.0, //250
     this.tabBarViewWidth = 500.0,
   });
 

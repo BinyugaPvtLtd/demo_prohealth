@@ -26,12 +26,12 @@ class ThemeManagerDark {
 
 class ThemeManagerLightblue {
   static TextStyle customTextStyle(BuildContext context) {
-    double fontSize = MediaQuery.of(context).size.width / 150;
+    double fontSize = MediaQuery.of(context).size.width / 99;
     return TextStyle(
       fontFamily: 'FiraSans',
       fontSize: fontSize,
       color: Color(0xff2B647F),
-      fontWeight: FontWeight.w200,
+      fontWeight: FontWeight.w600,
     );
   }
 }
@@ -62,7 +62,7 @@ class ThemeManagerBlack {
 
 class ThemeManagerAccentblue {
   static TextStyle customTextStyle(BuildContext context) {
-    double fontSize = MediaQuery.of(context).size.width / 150;
+    double fontSize = MediaQuery.of(context).size.width / 130;
     return TextStyle(
       fontFamily: 'FiraSans',
       fontSize: fontSize,
@@ -96,10 +96,9 @@ class ThemeManageWhitebold {
   }
 }
 
-
 class RegisterTableHead {
   static TextStyle customTextStyle(BuildContext context) {
-    double fontSize = 12;
+    double fontSize = MediaQuery.of(context).size.width / 99;
     return TextStyle(
       fontFamily: 'FiraSans',
       fontSize: fontSize,
