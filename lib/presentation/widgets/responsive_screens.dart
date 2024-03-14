@@ -21,7 +21,8 @@ class ResponsivePage extends StatelessWidget {
             return Container(height: 1000, child: TabletScreen());
           } else {
             // return DesktopWebScreen();
-            return Expanded(child: Container(child: HomeScreen()));
+            return SingleChildScrollView(
+                scrollDirection: Axis.vertical, child: HomeScreen());
           }
         },
       ),

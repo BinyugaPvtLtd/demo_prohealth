@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///
 class ImpexTextField extends StatefulWidget {
   final TextEditingController controller;
   final bool obscureText;
@@ -43,13 +44,13 @@ class _ImpexTextFieldState extends State<ImpexTextField> {
       filled: true,
       enabledBorder: OutlineInputBorder(
         borderSide: const BorderSide(
-          color: Colors.yellow,
+          color: Color(0xffB1B1B1),
           width: 1.0,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: const BorderSide(
-          color: Colors.red,
+          color: Color(0xffB1B1B1),
           width: 2.0,
         ),
       ),
@@ -64,34 +65,57 @@ class _ImpexTextFieldState extends State<ImpexTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 240,
-      child: ListView(
-        shrinkWrap: true,
-        physics: ClampingScrollPhysics(),
-        children: <Widget>[
-          Container(
-            height: 10,
-          ),
-          TextField(
-            textAlign: TextAlign.start,
-            textAlignVertical: TextAlignVertical.center,
-            focusNode: _focusNode,
-            controller: widget.controller,
-            obscureText: widget.obscureText ?? false,
-            maxLines: widget.maxLines,
-            textInputAction: widget.textInputAction,
-            decoration:
-                buildTextInputDecoration(widget.labelText, widget.controller),
-            keyboardType: widget.keyboardType,
-            autofocus: widget.autofocus,
-            onSubmitted: widget.onSubmitted,
-            onTap: () => setState(() {
-              FocusScope.of(context).requestFocus(_focusNode);
-            }),
-          ),
-        ],
+      width: 160,
+      height: 30,
+      child: TextField(
+        textAlign: TextAlign.start,
+        textAlignVertical: TextAlignVertical.center,
+        focusNode: _focusNode,
+        controller: widget.controller,
+        obscureText: widget.obscureText ?? false,
+        maxLines: widget.maxLines,
+        textInputAction: widget.textInputAction,
+        decoration:
+            buildTextInputDecoration(widget.labelText, widget.controller),
+        keyboardType: widget.keyboardType,
+        autofocus: widget.autofocus,
+        onSubmitted: widget.onSubmitted,
+        onTap: () => setState(() {
+          FocusScope.of(context).requestFocus(_focusNode);
+        }),
+        style: TextStyle(
+          fontSize: 14, // Adjust the font size to your desired value
+        ),
       ),
     );
+    // Container(
+    //   height: 20,
+    //   width: 70,
+    //   child: ListView(
+    //     shrinkWrap: true,
+    //     physics: ClampingScrollPhysics(),
+    //     children: <Widget>[
+    //       // Container(height: 12),
+    //       TextField(
+    //         textAlign: TextAlign.start,
+    //         textAlignVertical: TextAlignVertical.center,
+    //         focusNode: _focusNode,
+    //         controller: widget.controller,
+    //         obscureText: widget.obscureText ?? false,
+    //         maxLines: widget.maxLines,
+    //         textInputAction: widget.textInputAction,
+    //         decoration:
+    //             buildTextInputDecoration(widget.labelText, widget.controller),
+    //         keyboardType: widget.keyboardType,
+    //         autofocus: widget.autofocus,
+    //         onSubmitted: widget.onSubmitted,
+    //         onTap: () => setState(() {
+    //           FocusScope.of(context).requestFocus(_focusNode);
+    //         }),
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 
   @override

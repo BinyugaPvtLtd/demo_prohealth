@@ -1,11 +1,9 @@
 import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/addemployee_tab_bar_constant.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/widget/administration.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/widget/clinical.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/widget/sales.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_screen/qualifications_child/education_child_tabbar.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_screen/qualifications_child/licenses_child_tabbar.dart';
-import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/child_tabbar_screen/qualifications_child/references_child_tabbar.dart';
 import 'package:flutter/material.dart';
-
-import '../../../widgets/constant_textfield/const_textfield.dart';
 
 class AddEmployeeHomeScreen extends StatefulWidget {
   @override
@@ -14,7 +12,7 @@ class AddEmployeeHomeScreen extends StatefulWidget {
 
 class _AddEmployeeHomeScreenState extends State<AddEmployeeHomeScreen> {
   late AddEmployeeController controller;
-  final TextEditingController _yourController = TextEditingController();
+
   //
   // @override
   // void initState() {
@@ -36,31 +34,14 @@ class _AddEmployeeHomeScreenState extends State<AddEmployeeHomeScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Center(
-          child: ImpexTextField(
-            controller: _yourController,
-            obscureText: false,
-            keyboardType: TextInputType.text,
-            labelText: 'Your Label',
-            maxLines: 1,
-            textInputAction: TextInputAction.done,
-            onSubmitted: (value) {
-              print('Submitted: $value');
-            },
-            autofocus: false,
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
         AddEmployeeTabBar(AddEmployeeController(tabs: [
-          Tab(text: 'Education'),
-          Tab(text: 'Reference'),
-          Tab(text: 'Licenses'),
+          Tab(text: 'Clinical'),
+          Tab(text: 'Sales'),
+          Tab(text: 'Administration'),
         ], tabViews: [
-          EducationChildTabbar(),
-          ReferencesChildTabbar(),
-          LicensesChildTabbar(),
+          ClinicalTab(),
+          SalesTab(),
+          AdministartionTab(),
         ])),
       ],
     );
