@@ -12,10 +12,10 @@ import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/hea
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/termination_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/head_tabbar_screen/time_off_head_tabbar.dart';
 import 'package:demo_prohealth/presentation/widgets/custom_icon_button_constant.dart';
+import 'package:demo_prohealth/presentation/widgets/profile_bar/profile_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../widgets/profile_bar/profile_bar.dart';
 import '../controller/controller.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/education_child_tabbar.dart';
 import '../widgets/child_tabbar_screen/qualifications_child/employment_child_tabbar.dart';
@@ -56,7 +56,7 @@ class _ManageScreenState extends State<ManageScreen> {
               ],
             ),
             SizedBox(
-              height: 5,
+              height: 10,
             ),
             EmploymentContainerConstant(),
           ],
@@ -105,21 +105,21 @@ class _ManageScreenState extends State<ManageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      /// green blue container
-      ProfileBar(),
-      SizedBox(
-        height: 10,
-      ),
+    return Padding(
+      padding: EdgeInsets.all(MediaQuery.of(context).size.height / 99),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        /// green blue container
+        ProfileBar(),
+        SizedBox(
+          height: 5,
+        ),
 
-      ///bottomppbar 1,2
-      CenteredTabBar(),
+        ///TabBar
+        CenteredTabBar(),
 
-      /// bottom row
-      SizedBox(
-        height: 6,
-      ),
-      BottomBarRow(),
-    ]);
+        /// bottom row
+        BottomBarRow(),
+      ]),
+    );
   }
 }
