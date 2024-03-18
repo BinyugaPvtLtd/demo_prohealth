@@ -1,7 +1,7 @@
 import 'package:demo_prohealth/app/theme_manager.dart';
 import 'package:demo_prohealth/presentation/widgets/profile_bar/widget/column_three.dart';
 import 'package:flutter/material.dart';
-
+///done by saloni
 class ProfileBar extends StatelessWidget {
   const ProfileBar({
     super.key,
@@ -122,9 +122,8 @@ class ProfileBar extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero,
-                          ),
+                          ), backgroundColor: Colors.redAccent,
                           elevation: 3,
-                          primary: Colors.redAccent,
                         ),
                         onPressed: () {},
                       ),

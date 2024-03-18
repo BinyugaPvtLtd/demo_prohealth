@@ -30,6 +30,7 @@ class CenteredTabBar extends GetView<CenteredTabBarController> {
               dividerColor: Colors.transparent,
             ),
             Container(
+             // color: Colors.purpleAccent,
               height: controller.tabBarViewHeight,
               child: TabBarView(
                 controller: controller.tabController,

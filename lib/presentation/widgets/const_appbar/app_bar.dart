@@ -70,7 +70,6 @@ class MyAppBar extends StatelessWidget {
                         left: MediaQuery.of(context).size.width / 99,
                       ),
                       child: Container(
-                        // padding: EdgeInsets.all(2),
                         height: 33,
                         width: 80,
                         decoration: BoxDecoration(

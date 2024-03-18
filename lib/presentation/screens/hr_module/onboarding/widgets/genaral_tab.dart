@@ -193,37 +193,38 @@ class InfoTextWidget extends StatelessWidget {
         ),
       ),
     );
-
-    //   Expanded(
-    //     child: Column(
-    //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-    //   crossAxisAlignment: CrossAxisAlignment.start,
-    //   children: [
-    //     Text(
-    //       "Social Security no",
-    //       style: TextStyle(
-    //           color: Color(0xff686464),
-    //           fontSize: MediaQuery.of(context).size.width / 120),
-    //     ),
-    //     Text(
-    //       "Type of clinician",
-    //       style: TextStyle(
-    //           color: Color(0xff686464),
-    //           fontSize: MediaQuery.of(context).size.width / 120),
-    //     ),
-    //     Text(
-    //       "Personal No.",
-    //       style: TextStyle(
-    //           color: Color(0xff686464),
-    //           fontSize: MediaQuery.of(context).size.width / 120),
-    //     ),
-    //     Text(
-    //       "Personal Email",
-    //       style: TextStyle(
-    //           color: Color(0xff686464),
-    //           fontSize: MediaQuery.of(context).size.width / 120),
-    //     ),
-    //   ],
-    // ));
   }
 }
+
+
+//   Expanded(
+//     child: Column(
+//   mainAxisAlignment: MainAxisAlignment.spaceAround,
+//   crossAxisAlignment: CrossAxisAlignment.start,
+//   children: [
+//     Text(
+//       "Social Security no",
+//       style: TextStyle(
+//           color: Color(0xff686464),
+//           fontSize: MediaQuery.of(context).size.width / 120),
+//     ),
+//     Text(
+//       "Type of clinician",
+//       style: TextStyle(
+//           color: Color(0xff686464),
+//           fontSize: MediaQuery.of(context).size.width / 120),
+//     ),
+//     Text(
+//       "Personal No.",
+//       style: TextStyle(
+//           color: Color(0xff686464),
+//           fontSize: MediaQuery.of(context).size.width / 120),
+//     ),
+//     Text(
+//       "Personal Email",
+//       style: TextStyle(
+//           color: Color(0xff686464),
+//           fontSize: MediaQuery.of(context).size.width / 120),
+//     ),
+//   ],
+// ));
