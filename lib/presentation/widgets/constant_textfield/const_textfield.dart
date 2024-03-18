@@ -34,6 +34,8 @@ class _ImpexTextFieldState extends State<ImpexTextField> {
     TextEditingController controller,
   ) {
     return InputDecoration(
+      contentPadding: EdgeInsets.symmetric(horizontal: 3, vertical: 20),
+
       labelText: labelText,
       labelStyle: TextStyle(
         color: Colors.grey,
@@ -66,8 +68,9 @@ class _ImpexTextFieldState extends State<ImpexTextField> {
   Widget build(BuildContext context) {
     return Container(
       width: 160,
-      height: 30,
+      height: 35,
       child: TextField(
+        cursorHeight: 14,
         textAlign: TextAlign.start,
         textAlignVertical: TextAlignVertical.center,
         focusNode: _focusNode,

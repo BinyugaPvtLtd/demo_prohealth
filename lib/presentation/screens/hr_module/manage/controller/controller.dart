@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../register/register_enroll_popup.dart';
 
+/// main screen controller
 class MyController extends GetxController {
   /// Flag to determine if it's a tablet screen
   RxBool isTabletScreen = false.obs;
@@ -12,18 +14,20 @@ class MyController extends GetxController {
   }
 }
 
-class MyAppTabBarController extends GetxController with GetSingleTickerProviderStateMixin{
+///
+class MyAppTabBarController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   late TabController tabController;
   final List<Widget> tabs;
   final List<Widget> tabViews;
   final double tabBarViewHeight;
   final double tabBarViewWidth;
 
-  MyAppTabBarController({
-    required this.tabs,
-    required this.tabViews,
-    this.tabBarViewHeight = 610.0,
-    required this.tabBarViewWidth});
+  MyAppTabBarController(
+      {required this.tabs,
+      required this.tabViews,
+      this.tabBarViewHeight = 610.0,
+      required this.tabBarViewWidth});
 
   @override
   void onInit() {
@@ -38,7 +42,9 @@ class MyAppTabBarController extends GetxController with GetSingleTickerProviderS
   }
 }
 
-class CenteredTabBarController extends GetxController with GetSingleTickerProviderStateMixin {
+///
+class CenteredTabBarController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   late TabController tabController;
 
   final List<Widget> tabs;
@@ -49,7 +55,7 @@ class CenteredTabBarController extends GetxController with GetSingleTickerProvid
   CenteredTabBarController({
     required this.tabs,
     required this.tabViews,
-    this.tabBarViewHeight = 320.0,//350
+    this.tabBarViewHeight = 320.0, //350
     this.tabBarViewWidth = 600.0,
   });
 
@@ -66,7 +72,9 @@ class CenteredTabBarController extends GetxController with GetSingleTickerProvid
   }
 }
 
-class CenteredTabBarChildController extends GetxController with GetSingleTickerProviderStateMixin  {
+///
+class CenteredTabBarChildController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   late TabController tabController;
   final List<Widget> tabs;
   final List<Widget> tabViews;
@@ -76,7 +84,7 @@ class CenteredTabBarChildController extends GetxController with GetSingleTickerP
   CenteredTabBarChildController({
     required this.tabs,
     required this.tabViews,
-    this.tabBarViewHeight = 250.0,//250
+    this.tabBarViewHeight = 250.0, //250
     this.tabBarViewWidth = 600.0,
   });
 
@@ -93,6 +101,7 @@ class CenteredTabBarChildController extends GetxController with GetSingleTickerP
   }
 }
 
+///
 class RegisterController extends GetxController {
   final isDialogOpen = false.obs;
 
@@ -106,6 +115,7 @@ class RegisterController extends GetxController {
   }
 }
 
+///
 class AddEmployeeController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late TabController tabController;
@@ -118,6 +128,35 @@ class AddEmployeeController extends GetxController
     required this.tabs,
     required this.tabViews,
     this.tabBarViewHeight = 500.0, //250
+    this.tabBarViewWidth = 500.0,
+  });
+
+  @override
+  void onInit() {
+    tabController = TabController(length: tabs.length, vsync: this);
+    super.onInit();
+  }
+
+  @override
+  void onClose() {
+    tabController.dispose();
+    super.onClose();
+  }
+}
+
+///
+class OnboardingController extends GetxController
+    with GetSingleTickerProviderStateMixin {
+  late TabController tabController;
+  final List<Widget> tabs;
+  final List<Widget> tabViews;
+  final double tabBarViewHeight;
+  final double tabBarViewWidth;
+
+  OnboardingController({
+    required this.tabs,
+    required this.tabViews,
+    this.tabBarViewHeight = 300.0, //250
     this.tabBarViewWidth = 500.0,
   });
 

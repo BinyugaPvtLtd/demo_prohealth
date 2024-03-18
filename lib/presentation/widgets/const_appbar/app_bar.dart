@@ -3,6 +3,7 @@ import 'package:demo_prohealth/presentation/screens/hr_module/add_employee/add_e
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/controller/controller.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/web_manage/manage_screen.dart';
 import 'package:demo_prohealth/presentation/screens/hr_module/manage/widgets/app_bar_tabbar_constant.dart';
+import 'package:demo_prohealth/presentation/screens/hr_module/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +25,7 @@ class MyAppBar extends StatelessWidget {
         ManageScreen(),
         AddEmployeeHomeScreen(),
         RegisterScreen(),
-        Center(child: Text('Onboarding Screen')),
+        OnBoardingScreen(),
       ],
       tabBarViewWidth: MediaQuery.of(context).size.width / 1.04,
     ));

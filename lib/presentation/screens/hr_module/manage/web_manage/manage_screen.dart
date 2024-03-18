@@ -105,21 +105,21 @@ class _ManageScreenState extends State<ManageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      /// green blue container
-      ProfileBar(),
-      SizedBox(
-        height: 10,
-      ),
+    return Padding(
+      padding: EdgeInsets.all(MediaQuery.of(context).size.height / 99),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        /// green blue container
+        ProfileBar(),
+        SizedBox(
+          height: 5,
+        ),
 
-      ///TabBar
-      CenteredTabBar(),
-      SizedBox(
-        height: 6,
-      ),
+        ///TabBar
+        CenteredTabBar(),
 
-      /// bottom row
-      BottomBarRow(),
-    ]);
+        /// bottom row
+        BottomBarRow(),
+      ]),
+    );
   }
 }
