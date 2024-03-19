@@ -19,22 +19,30 @@ class IconButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      style: IconButton.styleFrom(
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/100),
+        shape:  RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: BorderSide(color: Color(0xFF50B5E5)),
+        ),
+      ),
       onPressed: () => onPressed(),
       icon: Row(
         children: [
           Icon(
             iconData,
             color: iconColor,
+            size: MediaQuery.of(context).size.width/100,
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width / 150,
+            width: MediaQuery.of(context).size.width / 200,
           ), // Adjust the space between the icon and text as needed
           Text(
             buttonText,
             style: TextStyle(
               fontFamily: 'FiraSans',
               fontWeight: FontWeight.w700,
-              fontSize: MediaQuery.of(context).size.width / 120,
+              fontSize: MediaQuery.of(context).size.width / 150,
               color: textColor,
             ),
           ),
